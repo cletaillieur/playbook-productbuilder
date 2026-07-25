@@ -1,13 +1,7 @@
 ---
-title: "2.2.1 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Valider la pertinence et la faisabilité"
 authors:
   - "John Kouto"
 last_updated: "2026-03-17"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-tXGN6vPIjq"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-tXGN6vPIjq::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 2.2.1 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Valider la pertinence et la faisabilité
@@ -34,5 +28,4 @@ Organisé par Converteo et Instinct Collectif, “Roadmap AI Marketing 2025” �
 
 Le contexte avait tous les éléments d’une réalisation d’un POC : temps et ressources limités (2 semaines de marge avec la contribution d’un Product Builder et d’une Data Scientist), scope réduit au fondamental, avec l’ambition de prouver un point (“quelle valeur marketing pourrait avoir l’IA”), tout en opérant une expérimentation technique inédite.
 
-[ÉLÉMENT CODA À VÉRIFIER — callout type="note" non converti nativement en Markdown standard]
-> Lire aussi : le détail du cas “**[Wrap Up Agent Roadmap AI Marketing 2025](https://coda.io/d/_dGKuDyag4nM#Liste-des-contenus_tuxvzd3U/Detail_vuGgzkxE/r25)****”** en annexe.
+> Lire aussi : le détail du cas “**[Wrap Up Agent Roadmap AI Marketing 2025](annexe-lexemple-du-wrap-up-agent-raim-2025.md)****”** en annexe.

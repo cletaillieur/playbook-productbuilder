@@ -1,6 +1,7 @@
 # Fichiers temporaires de migration
 migration/
 CLAUDE.md
+DESIGN_SYSTEM.md
 
 # Configuration locale Claude Code
 .claude/settings.local.json

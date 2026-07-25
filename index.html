@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playbook Product Builder — Converteo</title>
+<meta name="description" content="Le Playbook Product Builder de Converteo : méthodes, compétences et frameworks pour cadrer, prototyper et industrialiser des produits IA.">
+<meta name="theme-color" content="#2E1452">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playbook Product Builder — Converteo">
+<meta property="og:title" content="Playbook Product Builder — Converteo">
+<meta property="og:description" content="Le Playbook Product Builder de Converteo : méthodes, compétences et frameworks pour cadrer, prototyper et industrialiser des produits IA.">
+<meta property="og:locale" content="fr_FR">
+<!-- og:url et og:image à ajouter une fois l'URL de publication et un visuel officiel disponibles -->
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Playbook Product Builder — Converteo">
+<meta name="twitter:description" content="Le Playbook Product Builder de Converteo : méthodes, compétences et frameworks pour cadrer, prototyper et industrialiser des produits IA.">
+
+<!-- Canonical à définir une fois l'URL de publication GitHub Pages connue -->
+<!-- <link rel="canonical" href="https://REMPLACER-PAR-URL-PUBLIQUE/"> -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Playbook Product Builder — Converteo",
+  "description": "Le Playbook Product Builder de Converteo : méthodes, compétences et frameworks pour cadrer, prototyper et industrialiser des produits IA.",
+  "inLanguage": "fr-FR"
+}
+</script>
+
+<style>
+  :root {
+    --color-night: #2E1452;
+    --color-cyan: #2BD6D9;
+    --color-cyan-soft: #E2FFFF;
+
+    --color-electric-blue: #3836BF;
+    --color-green: #00C47A;
+    --color-teal: #009699;
+    --color-yellow: #FFC229;
+    --color-red: #FF3125;
+    --color-pearl: #DEDBDE;
+
+    --color-gray-900: #2A2730;
+    --color-gray-700: #767676;
+    --color-gray-500: #C4C4C4;
+    --color-gray-200: #EFEFEF;
+    --color-gray-100: #F9F9F9;
+    --color-white: #FFFFFF;
+
+    --surface-page: var(--color-gray-100);
+    --surface-card: var(--color-white);
+    --surface-subtle: #F5F4FF;
+
+    --text-primary: var(--color-gray-900);
+    --text-secondary: var(--color-gray-700);
+    --text-inverse: var(--color-white);
+
+    --border-subtle: var(--color-gray-200);
+    --border-strong: var(--color-gray-500);
+
+    --focus-ring: 0 0 0 3px rgba(43, 214, 217, 0.35);
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --radius-pill: 999px;
+
+    --shadow-card: 0 12px 30px rgba(46, 20, 82, 0.08);
+
+    --header-height: 72px;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--surface-page);
+    color: var(--text-primary);
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  h1, h2, h3 {
+    color: var(--color-night);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  img, svg {
+    max-width: 100%;
+    display: block;
+  }
+
+  .container {
+    width: min(100% - 2rem, 1280px);
+    margin-inline: auto;
+  }
+
+  /* Lien d'évitement */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: var(--space-4);
+    z-index: 1000;
+    padding: var(--space-3) var(--space-5);
+    background: var(--color-night);
+    color: var(--color-white);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 160ms ease;
+  }
+
+  .skip-link:focus {
+    top: var(--space-4);
+  }
+
+  /* Focus visible global */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+
+  /* Champ de recherche */
+  .search-input {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    color: var(--text-primary);
+    font: inherit;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: var(--color-cyan);
+    box-shadow: var(--focus-ring);
+  }
+
+  /* Boutons */
+  .button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-cyan);
+    color: var(--color-night);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 160ms ease, background 160ms ease;
+    cursor: pointer;
+  }
+
+  .button-primary:hover {
+    background: #68E4E6;
+    transform: translateY(-1px);
+  }
+
+  .button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid currentColor;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 160ms ease, transform 160ms ease;
+  }
+
+  .button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+
+  /* En-tête */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    min-height: var(--header-height);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: var(--color-night);
+  }
+
+  .brand-logo {
+    width: clamp(110px, 14vw, 150px);
+    height: auto;
+    color: var(--color-night);
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-night);
+    white-space: nowrap;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .header-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .header-link:hover {
+    color: var(--color-night);
+  }
+
+  .button-sm {
+    min-height: 44px;
+    padding: 0.6rem 1.1rem;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    background: var(--color-white);
+    cursor: pointer;
+  }
+
+  .menu-toggle-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-night);
+    border-radius: var(--radius-pill);
+  }
+
+  /* Utilitaire accessibilité */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Mise en page à deux colonnes (sidebar + contenu) */
+  .layout-shell {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+  }
+
+  .page-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* Overlay mobile */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: rgba(46, 20, 82, 0.55);
+    cursor: pointer;
+  }
+
+  .sidebar-overlay[hidden] {
+    display: none;
+  }
+
+  /* Sidebar de navigation (desktop + drawer mobile) */
+  .sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--color-white);
+    border-right: 1px solid var(--border-subtle);
+    padding: var(--space-5) var(--space-4) var(--space-8);
+    overflow-wrap: anywhere;
+  }
+
+  .sidebar-close {
+    display: none;
+  }
+
+  .sidebar-search {
+    margin-bottom: var(--space-5);
+  }
+
+  .nav-group + .nav-group {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .nav-group-heading {
+    margin: 0;
+  }
+
+  .nav-group-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    border: 0;
+    border-left: 3px solid transparent;
+    background: none;
+    color: var(--color-night);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: left;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+
+  .nav-group-toggle:hover {
+    background: var(--surface-subtle);
+  }
+
+  .nav-group-toggle[aria-expanded="true"] {
+    background: var(--color-cyan-soft);
+    border-left-color: var(--color-cyan);
+  }
+
+  .nav-group-icon {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 160ms ease;
+  }
+
+  .nav-group-toggle[aria-expanded="false"] .nav-group-icon {
+    transform: rotate(-45deg);
+  }
+
+  .nav-group-list {
+    margin-top: var(--space-2);
+  }
+
+  .nav-group-list[hidden] {
+    display: none;
+  }
+
+  .nav-subgroup-label {
+    margin: var(--space-4) 0 var(--space-2);
+    padding-inline: var(--space-3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .nav-group-list > .nav-subgroup-label:first-child {
+    margin-top: var(--space-3);
+  }
+
+  .sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-nav li + li {
+    margin-top: var(--space-1);
+  }
+
+  .sidebar-nav li.search-hidden {
+    display: none;
+  }
+
+  .nav-group.search-hidden {
+    display: none;
+  }
+
+  .sidebar-nav a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    color: var(--color-night);
+    text-decoration: none;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .sidebar-nav a:hover {
+    background: var(--surface-subtle);
+  }
+
+  .sidebar-nav a.is-active {
+    background: var(--color-cyan-soft);
+    color: var(--color-night);
+    font-weight: 600;
+  }
+
+  .sidebar-empty-state {
+    margin-top: var(--space-5);
+    padding: var(--space-3);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .sidebar-empty-state[hidden] {
+    display: none;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-night);
+    color: var(--text-inverse);
+    padding-block: var(--space-9) var(--space-8);
+  }
+
+  .hero-graphic {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-graphic span {
+    position: absolute;
+    border-radius: 999px;
+  }
+
+  .hero-graphic .shape-1 {
+    width: 34rem;
+    height: 34rem;
+    right: -8rem;
+    top: -10rem;
+    background: radial-gradient(circle at 30% 30%, rgba(43, 214, 217, 0.32), rgba(43, 214, 217, 0) 70%);
+  }
+
+  .hero-graphic .shape-2 {
+    width: 28rem;
+    height: 28rem;
+    left: -7rem;
+    bottom: -9rem;
+    background: radial-gradient(circle at 70% 70%, rgba(56, 54, 191, 0.4), rgba(56, 54, 191, 0) 70%);
+  }
+
+  .hero-graphic .shape-3 {
+    width: 16rem;
+    height: 16rem;
+    right: 14%;
+    bottom: -4rem;
+    border-radius: var(--radius-lg);
+    clip-path: polygon(22% 0%, 100% 0%, 78% 100%, 0% 100%);
+    background: linear-gradient(135deg, rgba(43, 214, 217, 0.28), rgba(56, 54, 191, 0.28));
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 46rem;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    margin-bottom: var(--space-5);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-pill);
+    background: rgba(43, 214, 217, 0.15);
+    border: 1px solid rgba(43, 214, 217, 0.4);
+    color: var(--color-cyan);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .hero h1 {
+    color: var(--text-inverse);
+  }
+
+  .hero-intro {
+    margin-top: var(--space-5);
+    max-width: 42rem;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-7);
+  }
+
+  /* Lecteur documentaire */
+  .document-viewer {
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    background: var(--color-white);
+    padding: clamp(2rem, 5vw, 5rem);
+    scroll-margin-top: calc(var(--header-height) + var(--space-4));
+  }
+
+  .document-inner {
+    width: min(100%, 920px);
+    margin-inline: auto;
+  }
+
+  .document-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .document-number {
+    margin-bottom: 0.75rem;
+    color: var(--color-teal);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .document-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .document-body {
+    max-width: 75ch;
+  }
+
+  .document-body h1,
+  .document-body h2,
+  .document-body h3,
+  .document-body h4 {
+    scroll-margin-top: calc(var(--header-height) + 1.5rem);
+  }
+
+  .document-body h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .document-body h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .document-body p,
+  .document-body ul,
+  .document-body ol,
+  .document-body blockquote,
+  .document-body table,
+  .document-body pre {
+    margin-block: 1rem;
+  }
+
+  .document-body img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: var(--radius-md);
+  }
+
+  .document-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-block: 1.5rem;
+  }
+
+  .document-body table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .document-body th,
+  .document-body td {
+    padding: 0.75rem;
+    border: 1px solid var(--border-subtle);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .document-body th {
+    background: var(--surface-subtle);
+    color: var(--color-night);
+  }
+
+  .document-body blockquote {
+    margin-left: 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--color-cyan);
+    background: var(--color-cyan-soft);
+  }
+
+  .document-body pre {
+    overflow-x: auto;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    background: var(--color-night);
+    color: var(--color-white);
+  }
+
+  .document-body code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .github-source-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 1rem;
+    color: var(--color-night);
+    font-weight: 600;
+  }
+
+  .document-loading,
+  .document-error {
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    background: var(--surface-subtle);
+  }
+
+  /* Page d'accueil du lecteur (aucun document sélectionné) */
+  .document-welcome h2 {
+    margin-bottom: 1rem;
+  }
+
+  .document-welcome p {
+    margin-block: 1rem;
+    max-width: 65ch;
+  }
+
+  .document-welcome ul {
+    margin-block: 1rem;
+    padding-left: 1.25rem;
+    max-width: 65ch;
+  }
+
+  .document-welcome li + li {
+    margin-top: 0.5rem;
+  }
+
+  .document-welcome-count {
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .document-welcome-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-5);
+    margin-top: var(--space-6);
+  }
+
+  @media (max-width: 900px) {
+    .document-viewer {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .document-viewer {
+      padding: 1.25rem 1rem;
+    }
+
+    .document-meta {
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+  }
+
+  /* Pied de page */
+  .site-footer {
+    background: var(--color-night);
+    color: rgba(255, 255, 255, 0.85);
+    padding-block: var(--space-7);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .footer-logo {
+    width: clamp(100px, 12vw, 130px);
+    height: auto;
+    color: var(--color-white);
+  }
+
+  .footer-brand-name {
+    font-weight: 600;
+    color: var(--text-inverse);
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-cyan);
+  }
+
+  .footer-meta {
+    width: 100%;
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.65);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: space-between;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-inner {
+      max-width: 38rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .header-nav {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 85%;
+      max-width: 360px;
+      height: 100vh;
+      height: 100dvh;
+      z-index: 200;
+      border-right: none;
+      box-shadow: var(--shadow-card);
+      transform: translateX(-100%);
+      transition: transform 220ms ease;
+    }
+
+    .sidebar.is-open {
+      transform: translateX(0);
+    }
+
+    .sidebar-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: var(--space-4);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--color-white);
+      color: var(--color-night);
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero {
+      padding-block: var(--space-8) var(--space-7);
+    }
+
+    .hero-actions .button-primary,
+    .hero-actions .button-secondary {
+      width: 100%;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#hero" aria-label="Playbook Product Builder — Retour en haut de page">
+      <svg
+        class="brand-logo"
+        height="34"
+        width="212"
+        viewBox="0 0 212 34"
+        role="img"
+        aria-label="Converteo"
+      >
+        <path d="M96.2593 20.0874L87.6005 8.23926H83.7324V25.5567H87.3106V13.8141L95.8902 25.5567H99.8374V8.23926H96.2593V20.0874Z" fill="currentColor"></path>
+        <path d="M111.85 21.4185L106.776 8.23926H102.98L109.9 25.5567H113.794L120.674 8.23926H116.964L111.85 21.4185Z" fill="currentColor"></path>
+        <path d="M177.859 8.23926H177.826H177.859V21.57C177.857 22.0947 177.959 22.6145 178.159 23.0997C178.358 23.5849 178.652 24.026 179.022 24.3976C179.393 24.7692 179.833 25.064 180.317 25.2652C180.802 25.4664 181.321 25.5699 181.846 25.5699H191.355V22.1631H182.755C182.411 22.1632 182.081 22.0289 181.835 21.7888C181.589 21.5487 181.446 21.2219 181.437 20.8781V18.4465H190.307V15.0727H181.437V11.6329H191.355V8.23926H177.859Z" fill="currentColor"></path>
+        <path d="M123.982 8.23926H123.949H123.982V21.57C123.98 22.0947 124.082 22.6145 124.282 23.0997C124.481 23.5849 124.775 24.026 125.145 24.3976C125.516 24.7692 125.956 25.064 126.44 25.2652C126.925 25.4664 127.444 25.5699 127.969 25.5699H137.478V22.1631H128.845C128.507 22.1547 128.185 22.0167 127.946 21.7775C127.707 21.5383 127.569 21.2163 127.56 20.8781V18.4465H136.43V15.0727H127.56V11.6329H137.445V8.23926H123.982Z" fill="currentColor"></path>
+        <path d="M164.574 8.23926H158.439V11.6329H164.574V25.5567H168.153V11.6329H174.287V8.23926H168.153H164.574Z" fill="currentColor"></path>
+        <path d="M156.582 14.3681C156.582 10.2825 153.564 8.25293 148.78 8.25293H141.531V25.5704H145.109V20.4766H148.971L152.266 25.5638H156.292L152.76 19.8638C153.918 19.5034 154.922 18.7673 155.614 17.7719C156.306 16.7766 156.647 15.5788 156.582 14.3681ZM148.444 17.0962H145.116V11.6334H148.444C150.592 11.6334 152.819 11.9892 152.819 14.3549C152.819 16.7206 150.592 17.083 148.444 17.083V17.0962Z" fill="currentColor"></path>
+        <path d="M52.7922 11.5601C53.823 11.5167 54.8373 11.8298 55.6643 12.4467C56.4912 13.0637 57.0803 13.9467 57.3324 14.9471L60.6272 13.7412C60.2816 12.0738 59.3039 10.6049 57.8991 9.64251C56.3907 8.56669 54.5718 8.01362 52.7197 8.0676C51.5599 8.02333 50.4035 8.22139 49.3245 8.64914C48.2455 9.07689 47.2675 9.72493 46.453 10.5519C45.6446 11.4197 45.0177 12.4404 44.6092 13.5539C44.2006 14.6674 44.0188 15.8513 44.0742 17.036C44.0191 18.2238 44.201 19.4106 44.6094 20.5273C45.0179 21.6439 45.6446 22.6681 46.453 23.54C47.2691 24.3632 48.2479 25.007 49.327 25.4302C50.4061 25.8534 51.5616 26.0468 52.7197 25.9979C54.5673 26.0482 56.3824 25.5055 57.8991 24.4493C59.2944 23.459 60.2604 21.9747 60.6009 20.2979L57.3061 19.1184C57.0436 20.1115 56.4512 20.9858 55.6261 21.5977C54.801 22.2096 53.7924 22.5227 52.7659 22.4856C52.0955 22.512 51.4275 22.3918 50.8084 22.1334C50.1892 21.8751 49.6339 21.4848 49.1811 20.9898C48.2596 19.8848 47.789 18.4729 47.8632 17.036C47.7803 15.598 48.252 14.183 49.1811 13.0823C49.6344 12.579 50.1929 12.1817 50.817 11.9186C51.4411 11.6556 52.1155 11.5331 52.7922 11.5601Z" fill="currentColor"></path>
+        <path d="M71.6216 8.03391C70.4471 7.98543 69.2752 8.18053 68.1797 8.60693C67.0842 9.03334 66.0888 9.68182 65.2561 10.5116C64.4389 11.377 63.8029 12.397 63.3853 13.5116C62.9678 14.6262 62.7771 15.813 62.8245 17.0024C62.7739 18.1928 62.9604 19.3814 63.3734 20.4991C63.7863 21.6168 64.4173 22.6413 65.2297 23.5129C66.0627 24.3411 67.0586 24.9872 68.1544 25.4103C69.2502 25.8334 70.4219 26.0243 71.5953 25.9708C72.773 26.0315 73.9503 25.8435 75.0505 25.4188C76.1507 24.9942 77.1491 24.3425 77.9806 23.5063C78.7921 22.6362 79.4212 21.6125 79.8309 20.4955C80.2405 19.3785 80.4225 18.1908 80.366 17.0024C80.4196 15.8162 80.2362 14.6313 79.8267 13.5169C79.4171 12.4024 78.7895 11.3808 77.9806 10.5116C77.1518 9.67839 76.158 9.02758 75.0629 8.6009C73.9678 8.17422 72.7957 7.9811 71.6216 8.03391ZM75.2327 21.0088C74.7783 21.5097 74.2192 21.9045 73.5952 22.1653C72.9711 22.4261 72.2974 22.5464 71.6216 22.5179C70.9419 22.5476 70.2639 22.4279 69.6354 22.1672C69.0069 21.9065 68.4432 21.5111 67.9842 21.0088C67.0369 19.8952 66.5492 18.4627 66.6201 17.0024C66.5492 15.5421 67.0369 14.1095 67.9842 12.9959C68.4566 12.5137 69.0205 12.1307 69.6428 11.8691C70.2652 11.6076 70.9334 11.4729 71.6085 11.4729C72.2835 11.4729 72.9518 11.6076 73.5741 11.8691C74.1964 12.1307 74.7603 12.5137 75.2327 12.9959C76.1895 14.1056 76.6868 15.5385 76.6232 17.0024C76.6922 18.467 76.1943 19.9019 75.2327 21.0088Z" fill="currentColor"></path>
+        <path d="M209.253 10.5123C207.521 8.91929 205.254 8.03516 202.901 8.03516C200.547 8.03516 198.28 8.91929 196.548 10.5123C195.736 11.3799 195.105 12.4008 194.692 13.5153C194.279 14.6298 194.092 15.8156 194.143 17.003C194.092 18.1935 194.279 19.3821 194.692 20.4998C195.105 21.6175 195.736 22.642 196.548 23.5136C198.286 25.0953 200.551 25.972 202.901 25.972C205.25 25.972 207.515 25.0953 209.253 23.5136C210.068 22.6437 210.7 21.6195 211.113 20.5014C211.527 19.3833 211.712 18.1938 211.658 17.003C211.708 15.8157 211.521 14.6303 211.108 13.5159C210.695 12.4015 210.064 11.3805 209.253 10.5123ZM206.525 21.0095C206.07 21.5104 205.511 21.9052 204.887 22.166C204.263 22.4268 203.589 22.5471 202.914 22.5185C202.234 22.5483 201.556 22.4286 200.927 22.1679C200.299 21.9072 199.735 21.5117 199.276 21.0095C198.329 19.8959 197.841 18.4634 197.912 17.003C197.841 15.5427 198.329 14.1102 199.276 12.9966C199.749 12.5144 200.313 12.1313 200.935 11.8698C201.557 11.6083 202.226 11.4736 202.901 11.4736C203.576 11.4736 204.244 11.6083 204.866 11.8698C205.489 12.1313 206.052 12.5144 206.525 12.9966C207.482 14.1063 207.979 15.5392 207.915 17.003C207.984 18.4677 207.486 19.9026 206.525 21.0095Z" fill="currentColor"></path>
+        <path d="M38.7194 0.0615234H32.1298L21.7973 10.2425C20.8162 11.2054 20.0563 12.3701 19.57 13.6559C18.1664 6.61158 12.2424 0.0615234 1.04007 0.0615234H0.414062V8.27216H0.76331C8.3743 8.35783 11.076 13.0496 11.076 17.0034C11.076 20.9571 8.3743 25.6489 0.76331 25.7346H0.414062V33.9387H1.04007C12.2424 33.9387 18.173 27.3886 19.57 20.3443C20.0587 21.6289 20.8183 22.7931 21.7973 23.7577L32.1364 33.9387H38.726V27.4084L28.1497 17.0034L38.693 6.5984L38.7194 0.0615234Z" fill="#2BD6D9"></path>
+      </svg>
+      <span class="brand-name">Playbook Product Builder</span>
+    </a>
+
+    <nav class="header-nav" aria-label="Navigation principale">
+      <a class="header-link" href="https://github.com/Converteo/playbook-productbuilder" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="button-primary button-sm" href="https://github.com/Converteo/playbook-productbuilder" target="_blank" rel="noopener noreferrer">Contribuer</a>
+    </nav>
+
+    <button class="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="hero">
+    <div class="hero-graphic" aria-hidden="true">
+      <span class="shape-1"></span>
+      <span class="shape-2"></span>
+      <span class="shape-3"></span>
+    </div>
+
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">PLAYBOOK PRODUCT BUILDER</p>
+      <h1>Product Builder, catalyseur de la transformation vers l’IA et l’Agentique</h1>
+      <p class="hero-intro">Un guide stratégique et opérationnel pour cadrer, prototyper, valider et industrialiser des produits IA dans les grandes organisations.</p>
+      <div class="hero-actions">
+        <a class="button-primary" href="#document-viewer">Explorer le Playbook</a>
+        <a class="button-secondary" href="https://github.com/Converteo/playbook-productbuilder" target="_blank" rel="noopener noreferrer">Contribuer sur GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout-shell container">
+
+    <aside class="sidebar" id="sidebar" aria-label="Navigation du Playbook">
+      <button type="button" class="sidebar-close" aria-label="Fermer le menu">✕</button>
+
+      <div class="sidebar-search">
+        <label for="sidebar-search-input" class="visually-hidden">Rechercher dans le Playbook</label>
+        <input type="search" id="sidebar-search-input" class="search-input" placeholder="Rechercher un contenu…" autocomplete="off">
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Sommaire du Playbook">
+
+        <div class="nav-group" data-group="partie-1">
+          <h2 class="nav-group-heading">
+            <button type="button" class="nav-group-toggle" aria-expanded="true" aria-controls="nav-group-partie-1">
+              <span>Partie 1 — Portrait du rôle de Product Builder</span>
+              <span class="nav-group-icon" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div id="nav-group-partie-1" class="nav-group-list">
+            <p class="nav-subgroup-label">1.1 Origines et contexte</p>
+            <ul>
+              <li><a
+                href="#doc=1-1-1-aux-origines-du-product-builder"
+                class="document-link"
+                data-document-id="1-1-1-aux-origines-du-product-builder"
+                data-document-path="docs/1-1-1-aux-origines-du-product-builder.md"
+              >1.1.1 Aux origines du Product Builder</a></li>
+              <li><a
+                href="#doc=1-1-2-le-product-building-aujourdhui"
+                class="document-link"
+                data-document-id="1-1-2-le-product-building-aujourdhui"
+                data-document-path="docs/1-1-2-le-product-building-aujourdhui.md"
+              >1.1.2 Le Product Building aujourd'hui</a></li>
+              <li><a
+                href="#doc=1-1-3-product-building-pour-quels-contextes-organisationnels"
+                class="document-link"
+                data-document-id="1-1-3-product-building-pour-quels-contextes-organisationnels"
+                data-document-path="docs/1-1-3-product-building-pour-quels-contextes-organisationnels.md"
+              >1.1.3 Product Building : pour quels contextes organisationnels ?</a></li>
+            </ul>
+            <p class="nav-subgroup-label">1.2 Compétences</p>
+            <ul>
+              <li><a
+                href="#doc=1-2-1-competences-techniques-dun-product-builder"
+                class="document-link"
+                data-document-id="1-2-1-competences-techniques-dun-product-builder"
+                data-document-path="docs/1-2-1-competences-techniques-dun-product-builder.md"
+              >1.2.1 Compétences techniques d'un Product Builder</a></li>
+              <li><a
+                href="#doc=1-2-2-competences-produit-du-product-builder"
+                class="document-link"
+                data-document-id="1-2-2-competences-produit-du-product-builder"
+                data-document-path="docs/1-2-2-competences-produit-du-product-builder.md"
+              >1.2.2 Compétences Produit du Product Builder</a></li>
+              <li><a
+                href="#doc=1-2-3-competences-transversales-du-product-builder"
+                class="document-link"
+                data-document-id="1-2-3-competences-transversales-du-product-builder"
+                data-document-path="docs/1-2-3-competences-transversales-du-product-builder.md"
+              >1.2.3 Compétences transversales du Product Builder</a></li>
+            </ul>
+            <ul>
+              <li><a
+                href="#doc=1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder"
+                class="document-link"
+                data-document-id="1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder"
+                data-document-path="docs/1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder.md"
+              >1.3 Les (nombreux) défis et enjeux du rôle hybride de Product Builder</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-group" data-group="partie-2">
+          <h2 class="nav-group-heading">
+            <button type="button" class="nav-group-toggle" aria-expanded="true" aria-controls="nav-group-partie-2">
+              <span>Partie 2 — Cycle de vie Produit IA</span>
+              <span class="nav-group-icon" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div id="nav-group-partie-2" class="nav-group-list">
+            <ul>
+              <li><a
+                href="#doc=2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact"
+                class="document-link"
+                data-document-id="2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact"
+                data-document-path="docs/2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact.md"
+              >2.1 Cycle de vie Produit IA - Le cadrage stratégique : prioriser pour maximiser l'impact</a></li>
+            </ul>
+            <p class="nav-subgroup-label">2.2 Étape 2 — POC</p>
+            <ul>
+              <li><a
+                href="#doc=2-2-1-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-valider-la-pertinence-et-la-faisabilite"
+                class="document-link"
+                data-document-id="2-2-1-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-valider-la-pertinence-et-la-faisabilite"
+                data-document-path="docs/2-2-1-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-valider-la-pertinence-et-la-faisabilite.md"
+              >2.2.1 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Valider la pertinence et la faisabilité</a></li>
+              <li><a
+                href="#doc=2-2-2-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-preparer-le-passage-at-scale"
+                class="document-link"
+                data-document-id="2-2-2-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-preparer-le-passage-at-scale"
+                data-document-path="docs/2-2-2-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-preparer-le-passage-at-scale.md"
+              >2.2.2 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Préparer le passage at scale</a></li>
+              <li><a
+                href="#doc=2-2-3-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-gardien-de-la-vision"
+                class="document-link"
+                data-document-id="2-2-3-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-gardien-de-la-vision"
+                data-document-path="docs/2-2-3-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-gardien-de-la-vision.md"
+              >2.2.3 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Gardien de la vision</a></li>
+              <li><a
+                href="#doc=2-2-4-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-point-de-bascule"
+                class="document-link"
+                data-document-id="2-2-4-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-point-de-bascule"
+                data-document-path="docs/2-2-4-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-point-de-bascule.md"
+              >2.2.4 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Point de bascule</a></li>
+            </ul>
+            <p class="nav-subgroup-label">2.3 Étape 3 — Dossier de passation</p>
+            <ul>
+              <li><a
+                href="#doc=2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation"
+                class="document-link"
+                data-document-id="2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation"
+                data-document-path="docs/2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation.md"
+              >2.3 Cycle de vie Produit IA - Étape 3 : Dossier de passation</a></li>
+              <li><a
+                href="#doc=2-3-1-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-pourquoi"
+                class="document-link"
+                data-document-id="2-3-1-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-pourquoi"
+                data-document-path="docs/2-3-1-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-pourquoi.md"
+              >2.3.1 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Le "Pourquoi"</a></li>
+              <li><a
+                href="#doc=2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment"
+                class="document-link"
+                data-document-id="2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment"
+                data-document-path="docs/2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment.md"
+              >2.3.2 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Le "Comment"</a></li>
+              <li><a
+                href="#doc=2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent"
+                class="document-link"
+                data-document-id="2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent"
+                data-document-path="docs/2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent.md"
+              >2.3.3 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Ensemble du savoir de l'agent</a></li>
+              <li><a
+                href="#doc=2-3-4-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-archi-technique-et-modele-de-donnees"
+                class="document-link"
+                data-document-id="2-3-4-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-archi-technique-et-modele-de-donnees"
+                data-document-path="docs/2-3-4-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-archi-technique-et-modele-de-donnees.md"
+              >2.3.4 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Archi technique et modèle de données</a></li>
+              <li><a
+                href="#doc=2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation"
+                class="document-link"
+                data-document-id="2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation"
+                data-document-path="docs/2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation.md"
+              >2.3.5 Cycle de vie Produit IA - Étape 3 : Dossier de passation - La validation</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-group" data-group="annexes">
+          <h2 class="nav-group-heading">
+            <button type="button" class="nav-group-toggle" aria-expanded="true" aria-controls="nav-group-annexes">
+              <span>Annexes</span>
+              <span class="nav-group-icon" aria-hidden="true"></span>
+            </button>
+          </h2>
+          <div id="nav-group-annexes" class="nav-group-list">
+            <ul>
+              <li><a
+                href="#doc=annexe-les-questions-pour-cadrer-le-besoin-et-les-contraintes"
+                class="document-link"
+                data-document-id="annexe-les-questions-pour-cadrer-le-besoin-et-les-contraintes"
+                data-document-path="docs/annexe-les-questions-pour-cadrer-le-besoin-et-les-contraintes.md"
+              >Annexe - Les questions pour cadrer le besoin et les contraintes</a></li>
+              <li><a
+                href="#doc=annexe-les-biais-frequents-a-surveiller"
+                class="document-link"
+                data-document-id="annexe-les-biais-frequents-a-surveiller"
+                data-document-path="docs/annexe-les-biais-frequents-a-surveiller.md"
+              >Annexe - Les biais fréquents à surveiller</a></li>
+              <li><a
+                href="#doc=annexe-lexemple-du-wrap-up-agent-raim-2025"
+                class="document-link"
+                data-document-id="annexe-lexemple-du-wrap-up-agent-raim-2025"
+                data-document-path="docs/annexe-lexemple-du-wrap-up-agent-raim-2025.md"
+              >Annexe - L'exemple du Wrap UP agent RAIM 2025</a></li>
+              <li><a
+                href="#doc=annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia"
+                class="document-link"
+                data-document-id="annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia"
+                data-document-path="docs/annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia.md"
+              >Annexe - Quels KPIs à prendre en compte dans un projet IA ?</a></li>
+              <li><a
+                href="#doc=annexe-les-principes-cles-dun-prompt-efficace"
+                class="document-link"
+                data-document-id="annexe-les-principes-cles-dun-prompt-efficace"
+                data-document-path="docs/annexe-les-principes-cles-dun-prompt-efficace.md"
+              >Annexe - Les principes clés d'un prompt efficace</a></li>
+              <li><a
+                href="#doc=annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts"
+                class="document-link"
+                data-document-id="annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts"
+                data-document-path="docs/annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts.md"
+              >Annexe - Le framework ACTIF, une méthodologie de structuration des prompts</a></li>
+              <li><a
+                href="#doc=annexe-glossaire-simplifie"
+                class="document-link"
+                data-document-id="annexe-glossaire-simplifie"
+                data-document-path="docs/annexe-glossaire-simplifie.md"
+              >Annexe - Glossaire simplifié</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </nav>
+
+      <p class="sidebar-empty-state" data-empty-state hidden>Aucun résultat trouvé.</p>
+    </aside>
+
+    <div class="page-content">
+
+      <article
+        id="document-viewer"
+        class="document-viewer"
+        tabindex="-1"
+        aria-labelledby="document-title"
+      >
+        <div class="document-inner">
+
+          <div class="document-welcome">
+            <h2 id="document-title">Bienvenue dans le Playbook Product Builder</h2>
+            <p>Choisissez un contenu dans le sommaire à gauche pour commencer votre lecture : compétences du Product Builder, cycle de vie d'un produit IA et annexes pratiques.</p>
+            <p><strong>25 contenus</strong> répartis en trois grandes parties :</p>
+            <ul>
+              <li>Partie 1 — Portrait du rôle de Product Builder <span class="document-welcome-count">(7 contenus)</span></li>
+              <li>Partie 2 — Cycle de vie Produit IA <span class="document-welcome-count">(11 contenus)</span></li>
+              <li>Annexes <span class="document-welcome-count">(7 contenus)</span></li>
+            </ul>
+            <div class="document-welcome-actions">
+              <button type="button" class="button-primary" id="start-reading-button">Commencer la lecture</button>
+              <a class="github-source-link" href="https://github.com/Converteo/playbook-productbuilder/tree/main/docs" target="_blank" rel="noopener noreferrer">Voir les sources sur GitHub</a>
+            </div>
+          </div>
+
+          <!-- Le contenu d'un document sélectionné sera injecté ici -->
+
+        </div>
+      </article>
+
+      <p
+        id="document-announcer"
+        class="visually-hidden"
+        aria-live="polite"
+      ></p>
+
+    </div>
+  </div>
+</main>
+
+<button type="button" id="sidebar-overlay" class="sidebar-overlay" aria-label="Fermer le menu" hidden></button>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg
+        class="footer-logo"
+        height="34"
+        width="212"
+        viewBox="0 0 212 34"
+        role="img"
+        aria-label="Converteo"
+      >
+        <path d="M96.2593 20.0874L87.6005 8.23926H83.7324V25.5567H87.3106V13.8141L95.8902 25.5567H99.8374V8.23926H96.2593V20.0874Z" fill="currentColor"></path>
+        <path d="M111.85 21.4185L106.776 8.23926H102.98L109.9 25.5567H113.794L120.674 8.23926H116.964L111.85 21.4185Z" fill="currentColor"></path>
+        <path d="M177.859 8.23926H177.826H177.859V21.57C177.857 22.0947 177.959 22.6145 178.159 23.0997C178.358 23.5849 178.652 24.026 179.022 24.3976C179.393 24.7692 179.833 25.064 180.317 25.2652C180.802 25.4664 181.321 25.5699 181.846 25.5699H191.355V22.1631H182.755C182.411 22.1632 182.081 22.0289 181.835 21.7888C181.589 21.5487 181.446 21.2219 181.437 20.8781V18.4465H190.307V15.0727H181.437V11.6329H191.355V8.23926H177.859Z" fill="currentColor"></path>
+        <path d="M123.982 8.23926H123.949H123.982V21.57C123.98 22.0947 124.082 22.6145 124.282 23.0997C124.481 23.5849 124.775 24.026 125.145 24.3976C125.516 24.7692 125.956 25.064 126.44 25.2652C126.925 25.4664 127.444 25.5699 127.969 25.5699H137.478V22.1631H128.845C128.507 22.1547 128.185 22.0167 127.946 21.7775C127.707 21.5383 127.569 21.2163 127.56 20.8781V18.4465H136.43V15.0727H127.56V11.6329H137.445V8.23926H123.982Z" fill="currentColor"></path>
+        <path d="M164.574 8.23926H158.439V11.6329H164.574V25.5567H168.153V11.6329H174.287V8.23926H168.153H164.574Z" fill="currentColor"></path>
+        <path d="M156.582 14.3681C156.582 10.2825 153.564 8.25293 148.78 8.25293H141.531V25.5704H145.109V20.4766H148.971L152.266 25.5638H156.292L152.76 19.8638C153.918 19.5034 154.922 18.7673 155.614 17.7719C156.306 16.7766 156.647 15.5788 156.582 14.3681ZM148.444 17.0962H145.116V11.6334H148.444C150.592 11.6334 152.819 11.9892 152.819 14.3549C152.819 16.7206 150.592 17.083 148.444 17.083V17.0962Z" fill="currentColor"></path>
+        <path d="M52.7922 11.5601C53.823 11.5167 54.8373 11.8298 55.6643 12.4467C56.4912 13.0637 57.0803 13.9467 57.3324 14.9471L60.6272 13.7412C60.2816 12.0738 59.3039 10.6049 57.8991 9.64251C56.3907 8.56669 54.5718 8.01362 52.7197 8.0676C51.5599 8.02333 50.4035 8.22139 49.3245 8.64914C48.2455 9.07689 47.2675 9.72493 46.453 10.5519C45.6446 11.4197 45.0177 12.4404 44.6092 13.5539C44.2006 14.6674 44.0188 15.8513 44.0742 17.036C44.0191 18.2238 44.201 19.4106 44.6094 20.5273C45.0179 21.6439 45.6446 22.6681 46.453 23.54C47.2691 24.3632 48.2479 25.007 49.327 25.4302C50.4061 25.8534 51.5616 26.0468 52.7197 25.9979C54.5673 26.0482 56.3824 25.5055 57.8991 24.4493C59.2944 23.459 60.2604 21.9747 60.6009 20.2979L57.3061 19.1184C57.0436 20.1115 56.4512 20.9858 55.6261 21.5977C54.801 22.2096 53.7924 22.5227 52.7659 22.4856C52.0955 22.512 51.4275 22.3918 50.8084 22.1334C50.1892 21.8751 49.6339 21.4848 49.1811 20.9898C48.2596 19.8848 47.789 18.4729 47.8632 17.036C47.7803 15.598 48.252 14.183 49.1811 13.0823C49.6344 12.579 50.1929 12.1817 50.817 11.9186C51.4411 11.6556 52.1155 11.5331 52.7922 11.5601Z" fill="currentColor"></path>
+        <path d="M71.6216 8.03391C70.4471 7.98543 69.2752 8.18053 68.1797 8.60693C67.0842 9.03334 66.0888 9.68182 65.2561 10.5116C64.4389 11.377 63.8029 12.397 63.3853 13.5116C62.9678 14.6262 62.7771 15.813 62.8245 17.0024C62.7739 18.1928 62.9604 19.3814 63.3734 20.4991C63.7863 21.6168 64.4173 22.6413 65.2297 23.5129C66.0627 24.3411 67.0586 24.9872 68.1544 25.4103C69.2502 25.8334 70.4219 26.0243 71.5953 25.9708C72.773 26.0315 73.9503 25.8435 75.0505 25.4188C76.1507 24.9942 77.1491 24.3425 77.9806 23.5063C78.7921 22.6362 79.4212 21.6125 79.8309 20.4955C80.2405 19.3785 80.4225 18.1908 80.366 17.0024C80.4196 15.8162 80.2362 14.6313 79.8267 13.5169C79.4171 12.4024 78.7895 11.3808 77.9806 10.5116C77.1518 9.67839 76.158 9.02758 75.0629 8.6009C73.9678 8.17422 72.7957 7.9811 71.6216 8.03391ZM75.2327 21.0088C74.7783 21.5097 74.2192 21.9045 73.5952 22.1653C72.9711 22.4261 72.2974 22.5464 71.6216 22.5179C70.9419 22.5476 70.2639 22.4279 69.6354 22.1672C69.0069 21.9065 68.4432 21.5111 67.9842 21.0088C67.0369 19.8952 66.5492 18.4627 66.6201 17.0024C66.5492 15.5421 67.0369 14.1095 67.9842 12.9959C68.4566 12.5137 69.0205 12.1307 69.6428 11.8691C70.2652 11.6076 70.9334 11.4729 71.6085 11.4729C72.2835 11.4729 72.9518 11.6076 73.5741 11.8691C74.1964 12.1307 74.7603 12.5137 75.2327 12.9959C76.1895 14.1056 76.6868 15.5385 76.6232 17.0024C76.6922 18.467 76.1943 19.9019 75.2327 21.0088Z" fill="currentColor"></path>
+        <path d="M209.253 10.5123C207.521 8.91929 205.254 8.03516 202.901 8.03516C200.547 8.03516 198.28 8.91929 196.548 10.5123C195.736 11.3799 195.105 12.4008 194.692 13.5153C194.279 14.6298 194.092 15.8156 194.143 17.003C194.092 18.1935 194.279 19.3821 194.692 20.4998C195.105 21.6175 195.736 22.642 196.548 23.5136C198.286 25.0953 200.551 25.972 202.901 25.972C205.25 25.972 207.515 25.0953 209.253 23.5136C210.068 22.6437 210.7 21.6195 211.113 20.5014C211.527 19.3833 211.712 18.1938 211.658 17.003C211.708 15.8157 211.521 14.6303 211.108 13.5159C210.695 12.4015 210.064 11.3805 209.253 10.5123ZM206.525 21.0095C206.07 21.5104 205.511 21.9052 204.887 22.166C204.263 22.4268 203.589 22.5471 202.914 22.5185C202.234 22.5483 201.556 22.4286 200.927 22.1679C200.299 21.9072 199.735 21.5117 199.276 21.0095C198.329 19.8959 197.841 18.4634 197.912 17.003C197.841 15.5427 198.329 14.1102 199.276 12.9966C199.749 12.5144 200.313 12.1313 200.935 11.8698C201.557 11.6083 202.226 11.4736 202.901 11.4736C203.576 11.4736 204.244 11.6083 204.866 11.8698C205.489 12.1313 206.052 12.5144 206.525 12.9966C207.482 14.1063 207.979 15.5392 207.915 17.003C207.984 18.4677 207.486 19.9026 206.525 21.0095Z" fill="currentColor"></path>
+        <path d="M38.7194 0.0615234H32.1298L21.7973 10.2425C20.8162 11.2054 20.0563 12.3701 19.57 13.6559C18.1664 6.61158 12.2424 0.0615234 1.04007 0.0615234H0.414062V8.27216H0.76331C8.3743 8.35783 11.076 13.0496 11.076 17.0034C11.076 20.9571 8.3743 25.6489 0.76331 25.7346H0.414062V33.9387H1.04007C12.2424 33.9387 18.173 27.3886 19.57 20.3443C20.0587 21.6289 20.8183 22.7931 21.7973 23.7577L32.1364 33.9387H38.726V27.4084L28.1497 17.0034L38.693 6.5984L38.7194 0.0615234Z" fill="#2BD6D9"></path>
+      </svg>
+      <span class="footer-brand-name">Playbook Product Builder</span>
+    </div>
+
+    <ul class="footer-links">
+      <li><a href="https://github.com/Converteo/playbook-productbuilder" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+
+    <p class="footer-meta">
+      <span>© <span id="current-year"></span> Converteo</span>
+      <span>Un Playbook collaboratif proposé par Converteo.</span>
+    </p>
+  </div>
+</footer>
+
+<!--
+  Marked (conversion Markdown -> HTML) et DOMPurify (sanitisation) :
+  versions fixes servies par jsDelivr, intégrité SRI calculée à partir
+  des fichiers réellement téléchargés pour ces versions (sha384),
+  recoupée avec le hash officiel publié par l'API jsDelivr.
+-->
+<script
+  src="https://cdn.jsdelivr.net/npm/marked@18.0.7/lib/marked.umd.js"
+  integrity="sha384-7njNzKcJUBdezPGfqUrIFizi2QkXJH0M6wF3o1h9GE/nce6X4YdecMwh31B19yTi"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/dompurify@3.4.12/dist/purify.min.js"
+  integrity="sha384-piCcpDdJ7qVeK4Tv8Z6Hpcr3ZBIgP16TxQTPVfsLFdZ5uDgwc3Y8Ho7oUnqf12qu"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  /*
+   * Marked/DOMPurify sont chargées en scripts classiques (sans defer) :
+   * ce script s'exécute juste après elles dans le flux du document, donc
+   * de façon synchrone et dans l'ordre. Ajouter `defer` ici casserait cet
+   * ordre : les scripts `defer` ne s'exécutent qu'après l'analyse complète
+   * du document, soit après ce script inline (non différable de toute
+   * façon : `defer` n'a aucun effet sur un script sans `src`).
+   */
+  if (!window.marked || !window.DOMPurify) {
+    var libraryErrorTarget = document.querySelector('.document-inner');
+    if (libraryErrorTarget) {
+      var libraryErrorBox = document.createElement('div');
+      libraryErrorBox.className = 'document-error';
+      libraryErrorBox.setAttribute('role', 'alert');
+      libraryErrorBox.textContent = 'Le lecteur de documents est indisponible : les bibliothèques Marked et/ou DOMPurify n\'ont pas pu être chargées.';
+      libraryErrorTarget.prepend(libraryErrorBox);
+    }
+  } else {
+    marked.setOptions({
+      gfm: true,
+      breaks: true
+    });
+  }
+
+  /* Préfixe par "docs/" les chemins relatifs d'images et de liens, car les documents
+     sont rendus depuis index.html à la racine et non plus depuis docs/.
+     Ne touche pas aux URL absolues, aux ancres, ni à toute URL munie d'un schéma
+     (javascript:, data:, mailto:, etc.) : DOMPurify se charge de neutraliser
+     ces dernières si elles sont dangereuses. */
+  function resolveRelativeAssetPaths(rawMarkdown) {
+    return rawMarkdown.replace(
+      /(!?\[[^\]]*\]\()(?!https?:\/\/|\/\/|\/|#|[a-zA-Z][a-zA-Z0-9+.-]*:)([^)]+)(\))/g,
+      '$1docs/$2$3'
+    );
+  }
+
+  /* Liste de balises interdites lors du nettoyage DOMPurify. DOMPurify retire déjà par
+     défaut tous les gestionnaires d'événements (attributs `on*`) et les URL `javascript:` ;
+     cette liste retire en plus, explicitement, les scripts, iframes et objets/embeds. */
+  const MARKDOWN_SANITIZE_CONFIG = {
+    FORBID_TAGS: ['script', 'iframe', 'object', 'embed']
+  };
+
+  /*
+   * Extrait le front matter YAML minimal utilisé par le Playbook (authors, last_updated)
+   * sans dépendre d'un parseur YAML externe : seuls ces deux champs, dans ces deux
+   * formats, sont reconnus. Retourne { metadata: null, content } si aucun front matter
+   * n'est détecté, pour que l'appelant puisse alors se rabattre sur playbookDocuments.
+   */
+  function parseFrontMatter(markdown) {
+    const match = markdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
+    if (!match) {
+      return { metadata: null, content: markdown };
+    }
+
+    const block = match[1];
+    const content = markdown.slice(match[0].length);
+    const metadata = {};
+
+    const authorsListMatch = block.match(/authors:\s*\n((?:[ \t]*-[ \t]*.+\n?)+)/);
+    const authorsInlineMatch = block.match(/authors:\s*\[([^\]]*)\]/);
+
+    if (authorsListMatch) {
+      metadata.authors = authorsListMatch[1]
+        .split('\n')
+        .map(function (line) { return line.trim(); })
+        .filter(function (line) { return line.charAt(0) === '-'; })
+        .map(function (line) {
+          return line.replace(/^-\s*/, '').trim().replace(/^["']|["']$/g, '');
+        })
+        .filter(function (name) { return name.length > 0; });
+    } else if (authorsInlineMatch) {
+      metadata.authors = authorsInlineMatch[1]
+        .split(',')
+        .map(function (item) { return item.trim().replace(/^["']|["']$/g, ''); })
+        .filter(function (item) { return item.length > 0; });
+    }
+
+    const updatedMatch = block.match(/last_updated:\s*"?([^"\n]+?)"?\s*$/m);
+    if (updatedMatch) {
+      metadata.lastUpdated = updatedMatch[1].trim();
+    }
+
+    return { metadata: metadata, content: content };
+  }
+
+  /* Date française lisible (ex. "17 mars 2026") à partir d'une date ISO "YYYY-MM-DD". */
+  function formatFrenchDate(dateString) {
+    if (!dateString) {
+      return '';
+    }
+    const date = new Date(dateString + 'T00:00:00');
+    if (Number.isNaN(date.getTime())) {
+      return dateString;
+    }
+    return new Intl.DateTimeFormat('fr-FR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(date);
+  }
+
+  /* Échappement HTML pour les valeurs (titre, auteurs, date) insérées hors du flux
+     DOMPurify — ces valeurs viennent de playbookDocuments ou du front matter et ne
+     passent pas par le nettoyage appliqué au corps du document. */
+  function escapeHtml(value) {
+    const div = document.createElement('div');
+    div.textContent = String(value);
+    return div.innerHTML;
+  }
+
+  const playbookDocuments = [
+    {
+      id: "1-1-1-aux-origines-du-product-builder",
+      number: "1.1.1",
+      title: "Aux origines du Product Builder",
+      authors: ["Duy Tan PHAM VU"],
+      updated: "2026-03-17",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-1-1-aux-origines-du-product-builder.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-1-1-aux-origines-du-product-builder.md"
+    },
+    {
+      id: "1-1-2-le-product-building-aujourdhui",
+      number: "1.1.2",
+      title: "Le Product Building aujourd'hui",
+      authors: ["Duy Tan PHAM VU"],
+      updated: "2026-03-24",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-1-2-le-product-building-aujourdhui.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-1-2-le-product-building-aujourdhui.md"
+    },
+    {
+      id: "1-1-3-product-building-pour-quels-contextes-organisationnels",
+      number: "1.1.3",
+      title: "Product Building : pour quels contextes organisationnels ?",
+      authors: ["Duy Tan PHAM VU"],
+      updated: "2026-03-17",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-1-3-product-building-pour-quels-contextes-organisationnels.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-1-3-product-building-pour-quels-contextes-organisationnels.md"
+    },
+    {
+      id: "1-2-1-competences-techniques-dun-product-builder",
+      number: "1.2.1",
+      title: "Compétences techniques d'un Product Builder",
+      authors: ["Avenert Cazako"],
+      updated: "2026-03-24",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-2-1-competences-techniques-dun-product-builder.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-2-1-competences-techniques-dun-product-builder.md"
+    },
+    {
+      id: "1-2-2-competences-produit-du-product-builder",
+      number: "1.2.2",
+      title: "Compétences Produit du Product Builder",
+      authors: ["matthieu tylez"],
+      updated: "2026-03-24",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-2-2-competences-produit-du-product-builder.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-2-2-competences-produit-du-product-builder.md"
+    },
+    {
+      id: "1-2-3-competences-transversales-du-product-builder",
+      number: "1.2.3",
+      title: "Compétences transversales du Product Builder",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-2-3-competences-transversales-du-product-builder.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-2-3-competences-transversales-du-product-builder.md"
+    },
+    {
+      id: "1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder",
+      number: "1.3",
+      title: "Les (nombreux) défis et enjeux du rôle hybride de Product Builder",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Partie 1 — Portrait du rôle de Product Builder",
+      path: "docs/1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder.md"
+    },
+    {
+      id: "2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact",
+      number: "2.1",
+      title: "Cycle de vie Produit IA - Le cadrage stratégique : prioriser pour maximiser l'impact",
+      authors: ["Alexia Maynart"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact.md"
+    },
+    {
+      id: "2-2-1-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-valider-la-pertinence-et-la-faisabilite",
+      number: "2.2.1",
+      title: "Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Valider la pertinence et la faisabilité",
+      authors: ["John Kouto"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-2-1-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-valider-la-pertinence-et-la-faisabilite.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-2-1-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-valider-la-pertinence-et-la-faisabilite.md"
+    },
+    {
+      id: "2-2-2-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-preparer-le-passage-at-scale",
+      number: "2.2.2",
+      title: "Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Préparer le passage at scale",
+      authors: ["Avenert Cazako"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-2-2-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-preparer-le-passage-at-scale.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-2-2-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-preparer-le-passage-at-scale.md"
+    },
+    {
+      id: "2-2-3-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-gardien-de-la-vision",
+      number: "2.2.3",
+      title: "Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Gardien de la vision",
+      authors: ["Alexia Maynart"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-2-3-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-gardien-de-la-vision.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-2-3-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-gardien-de-la-vision.md"
+    },
+    {
+      id: "2-2-4-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-point-de-bascule",
+      number: "2.2.4",
+      title: "Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Point de bascule",
+      authors: ["Duy Tan PHAM VU"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-2-4-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-point-de-bascule.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-2-4-cycle-de-vie-produit-ia-etape-2-poc-penser-production-des-le-1er-jour-point-de-bascule.md"
+    },
+    {
+      id: "2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation",
+      number: "2.3",
+      title: "Cycle de vie Produit IA - Étape 3 : Dossier de passation",
+      authors: ["John Kouto"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation.md"
+    },
+    {
+      id: "2-3-1-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-pourquoi",
+      number: "2.3.1",
+      title: "Cycle de vie Produit IA - Étape 3 : Dossier de passation - Le \"Pourquoi\"",
+      authors: ["Alexia Maynart"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-3-1-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-pourquoi.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-3-1-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-pourquoi.md"
+    },
+    {
+      id: "2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment",
+      number: "2.3.2",
+      title: "Cycle de vie Produit IA - Étape 3 : Dossier de passation - Le \"Comment\"",
+      authors: ["Avenert Cazako"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment.md"
+    },
+    {
+      id: "2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent",
+      number: "2.3.3",
+      title: "Cycle de vie Produit IA - Étape 3 : Dossier de passation - Ensemble du savoir de l'agent",
+      authors: ["Duy Tan PHAM VU"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent.md"
+    },
+    {
+      id: "2-3-4-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-archi-technique-et-modele-de-donnees",
+      number: "2.3.4",
+      title: "Cycle de vie Produit IA - Étape 3 : Dossier de passation - Archi technique et modèle de données",
+      authors: ["Erik Perrier"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-3-4-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-archi-technique-et-modele-de-donnees.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-3-4-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-archi-technique-et-modele-de-donnees.md"
+    },
+    {
+      id: "2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation",
+      number: "2.3.5",
+      title: "Cycle de vie Produit IA - Étape 3 : Dossier de passation - La validation",
+      authors: ["Erik Perrier"],
+      updated: "2026-03-17",
+      section: "Partie 2 — Cycle de vie Produit IA",
+      path: "docs/2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation.md"
+    },
+    {
+      id: "annexe-les-questions-pour-cadrer-le-besoin-et-les-contraintes",
+      number: "",
+      title: "Annexe - Les questions pour cadrer le besoin et les contraintes",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-les-questions-pour-cadrer-le-besoin-et-les-contraintes.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-les-questions-pour-cadrer-le-besoin-et-les-contraintes.md"
+    },
+    {
+      id: "annexe-les-biais-frequents-a-surveiller",
+      number: "",
+      title: "Annexe - Les biais fréquents à surveiller",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-les-biais-frequents-a-surveiller.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-les-biais-frequents-a-surveiller.md"
+    },
+    {
+      id: "annexe-lexemple-du-wrap-up-agent-raim-2025",
+      number: "",
+      title: "Annexe - L'exemple du Wrap UP agent RAIM 2025",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-lexemple-du-wrap-up-agent-raim-2025.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-lexemple-du-wrap-up-agent-raim-2025.md"
+    },
+    {
+      id: "annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia",
+      number: "",
+      title: "Annexe - Quels KPIs à prendre en compte dans un projet IA ?",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia.md"
+    },
+    {
+      id: "annexe-les-principes-cles-dun-prompt-efficace",
+      number: "",
+      title: "Annexe - Les principes clés d'un prompt efficace",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-les-principes-cles-dun-prompt-efficace.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-les-principes-cles-dun-prompt-efficace.md"
+    },
+    {
+      id: "annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts",
+      number: "",
+      title: "Annexe - Le framework ACTIF, une méthodologie de structuration des prompts",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts.md"
+    },
+    {
+      id: "annexe-glossaire-simplifie",
+      number: "",
+      title: "Annexe - Glossaire simplifié",
+      authors: ["Etienne Fenetrier"],
+      updated: "2026-03-12",
+      section: "Annexes",
+      path: "docs/annexe-glossaire-simplifie.md",
+      githubUrl: "https://github.com/Converteo/playbook-productbuilder/blob/main/docs/annexe-glossaire-simplifie.md"
+    }
+  ];
+
+  const documentsById = new Map(
+    playbookDocuments.map(document => [document.id, document])
+  );
+
+  (function () {
+    var yearEl = document.getElementById('current-year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    /* Accordéon des groupes de navigation */
+    var groupToggles = document.querySelectorAll('.nav-group-toggle');
+    groupToggles.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        if (panel) {
+          panel.hidden = expanded;
+        }
+      });
+    });
+
+    /* Recherche dans la sidebar */
+    var searchInput = document.getElementById('sidebar-search-input');
+    var emptyState = document.querySelector('[data-empty-state]');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        var query = searchInput.value.trim().toLowerCase();
+        var groups = document.querySelectorAll('.nav-group');
+        var anyMatch = false;
+
+        groups.forEach(function (group) {
+          var items = group.querySelectorAll('li');
+          var groupHasMatch = false;
+
+          items.forEach(function (li) {
+            var text = li.textContent.toLowerCase();
+            var match = query === '' || text.indexOf(query) !== -1;
+            li.classList.toggle('search-hidden', !match);
+            if (match) {
+              groupHasMatch = true;
+            }
+          });
+
+          group.classList.toggle('search-hidden', !groupHasMatch);
+
+          if (query !== '' && groupHasMatch) {
+            var panel = group.querySelector('.nav-group-list');
+            var toggle = group.querySelector('.nav-group-toggle');
+            if (panel) {
+              panel.hidden = false;
+            }
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', 'true');
+            }
+          }
+
+          if (groupHasMatch) {
+            anyMatch = true;
+          }
+        });
+
+        if (emptyState) {
+          emptyState.hidden = anyMatch || query === '';
+        }
+      });
+    }
+
+    /* Sidebar desktop / drawer mobile */
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebar-overlay');
+    var hamburger = document.querySelector('.menu-toggle');
+    var closeBtn = sidebar ? sidebar.querySelector('.sidebar-close') : null;
+
+    function getFocusable() {
+      if (!sidebar) {
+        return [];
+      }
+      var nodes = sidebar.querySelectorAll('a[href], button:not([disabled]), input:not([disabled])');
+      return Array.prototype.filter.call(nodes, function (el) {
+        return el.offsetParent !== null;
+      });
+    }
+
+    function onKeydown(event) {
+      if (event.key === 'Escape' || event.key === 'Esc') {
+        closeSidebar();
+        return;
+      }
+      if (event.key === 'Tab') {
+        var focusable = getFocusable();
+        if (!focusable.length) {
+          return;
+        }
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    }
+
+    function openSidebar() {
+      if (!sidebar || !overlay || !hamburger) {
+        return;
+      }
+      sidebar.classList.add('is-open');
+      overlay.hidden = false;
+      document.body.classList.add('nav-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Fermer le menu');
+      document.addEventListener('keydown', onKeydown);
+      var target = searchInput || closeBtn;
+      if (target) {
+        target.focus();
+      }
+    }
+
+    function closeSidebar(returnFocus) {
+      if (!sidebar || !overlay || !hamburger) {
+        return;
+      }
+      sidebar.classList.remove('is-open');
+      overlay.hidden = true;
+      document.body.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+      document.removeEventListener('keydown', onKeydown);
+      if (returnFocus !== false) {
+        hamburger.focus();
+      }
+    }
+
+    if (sidebar && overlay && hamburger) {
+      hamburger.addEventListener('click', function () {
+        if (sidebar.classList.contains('is-open')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      });
+
+      overlay.addEventListener('click', function () {
+        closeSidebar();
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          closeSidebar();
+        });
+      }
+
+      sidebar.addEventListener('click', function (event) {
+        var link = event.target.closest ? event.target.closest('a[href]') : null;
+        if (!link) {
+          return;
+        }
+
+        if (link.classList.contains('document-link')) {
+          event.preventDefault();
+          loadDocument(link.dataset.documentId);
+          return;
+        }
+
+        if (sidebar.classList.contains('is-open')) {
+          closeSidebar(false);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900 && sidebar.classList.contains('is-open')) {
+          closeSidebar(false);
+        }
+      });
+    }
+
+    /* Lecteur documentaire : chargement dynamique des fichiers Markdown */
+    var documentViewerInner = document.querySelector('#document-viewer .document-inner');
+    var welcomeHtml = documentViewerInner ? documentViewerInner.innerHTML : '';
+    var documentCache = new Map();
+
+    function announce(message) {
+      var announcer = document.getElementById('document-announcer');
+      if (!announcer) {
+        return;
+      }
+      announcer.textContent = '';
+      window.requestAnimationFrame(function () {
+        announcer.textContent = message;
+      });
+    }
+
+    function setActiveDocumentLink(documentId) {
+      document.querySelectorAll('.sidebar-nav .document-link').forEach(function (link) {
+        var isActive = link.dataset.documentId === documentId;
+        link.classList.toggle('is-active', isActive);
+        if (!isActive) {
+          link.removeAttribute('aria-current');
+          return;
+        }
+        link.setAttribute('aria-current', 'page');
+        var group = link.closest('.nav-group');
+        if (group) {
+          var toggle = group.querySelector('.nav-group-toggle');
+          var panel = group.querySelector('.nav-group-list');
+          if (toggle) {
+            toggle.setAttribute('aria-expanded', 'true');
+          }
+          if (panel) {
+            panel.hidden = false;
+          }
+        }
+      });
+    }
+
+    /* Retire le premier titre du HTML généré uniquement s'il s'agit d'un <h1>
+       dont le texte correspond au titre du document (numéro inclus) : ce titre
+       est déjà affiché dans l'en-tête du lecteur. Aucun autre titre n'est touché. */
+    function stripDuplicateLeadingHeading(html, doc) {
+      var expected = (doc.number ? doc.number + ' ' + doc.title : doc.title)
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, ' ');
+      var template = document.createElement('template');
+      template.innerHTML = html;
+      var first = template.content.firstElementChild;
+      if (first && first.tagName === 'H1') {
+        var actual = first.textContent.trim().toLowerCase().replace(/\s+/g, ' ');
+        if (actual === expected) {
+          first.remove();
+        }
+      }
+      return template.innerHTML;
+    }
+
+    function renderLoadingState(doc) {
+      if (!documentViewerInner) {
+        return;
+      }
+      documentViewerInner.innerHTML =
+        '<div class="document-loading" role="status" aria-live="polite">Chargement de « ' +
+        escapeHtml(doc.title) +
+        ' »…</div>';
+    }
+
+    function renderDocumentView(doc, authors, lastUpdated, bodyHtml) {
+      if (!documentViewerInner) {
+        return;
+      }
+
+      var metaParts = [];
+      if (authors && authors.length) {
+        var label = authors.length > 1 ? 'Auteurs' : 'Auteur';
+        metaParts.push('<span>' + label + ' : ' + escapeHtml(authors.join(', ')) + '</span>');
+      }
+      if (lastUpdated) {
+        metaParts.push('<span>Dernière mise à jour : ' + escapeHtml(formatFrenchDate(lastUpdated)) + '</span>');
+      }
+
+      var numberHtml = doc.number ? '<p class="document-number">' + escapeHtml(doc.number) + '</p>' : '';
+
+      documentViewerInner.innerHTML =
+        '<header class="document-header">' +
+        numberHtml +
+        '<h1 id="document-title" tabindex="-1">' + escapeHtml(doc.title) + '</h1>' +
+        (metaParts.length ? '<div class="document-meta">' + metaParts.join('') + '</div>' : '') +
+        '<a class="github-source-link" href="' + doc.githubUrl + '" target="_blank" rel="noopener noreferrer">Voir la source sur GitHub</a>' +
+        '</header>' +
+        '<div class="document-body">' + bodyHtml + '</div>';
+
+      document.title = doc.title + ' — Playbook Product Builder — Converteo';
+      var heading = document.getElementById('document-title');
+      if (heading) {
+        heading.focus();
+      }
+      announce(doc.title);
+    }
+
+    function renderErrorState(title, message, doc) {
+      if (!documentViewerInner) {
+        return;
+      }
+
+      var actionsHtml = '';
+      if (doc) {
+        actionsHtml +=
+          '<button type="button" class="button-primary" data-retry-document="' + escapeHtml(doc.id) + '">Réessayer</button>' +
+          '<a class="github-source-link" href="' + doc.githubUrl + '" target="_blank" rel="noopener noreferrer">Voir la source sur GitHub</a>';
+      }
+      actionsHtml += '<button type="button" class="button-secondary" data-go-home>Retour à l\'accueil du Playbook</button>';
+
+      documentViewerInner.innerHTML =
+        '<div class="document-error" role="alert">' +
+        '<h2 id="document-title" tabindex="-1">' + escapeHtml(title) + '</h2>' +
+        '<p>' + escapeHtml(message) + '</p>' +
+        '<div class="document-welcome-actions">' + actionsHtml + '</div>' +
+        '</div>';
+
+      var retryBtn = documentViewerInner.querySelector('[data-retry-document]');
+      if (retryBtn) {
+        retryBtn.addEventListener('click', function () {
+          loadDocument(retryBtn.getAttribute('data-retry-document'));
+        });
+      }
+      var homeBtn = documentViewerInner.querySelector('[data-go-home]');
+      if (homeBtn) {
+        homeBtn.addEventListener('click', function () {
+          showWelcomeState();
+        });
+      }
+
+      document.title = title + ' — Playbook Product Builder — Converteo';
+      var heading = document.getElementById('document-title');
+      if (heading) {
+        heading.focus();
+      }
+      announce(title);
+    }
+
+    function showWelcomeState() {
+      if (documentViewerInner) {
+        documentViewerInner.innerHTML = welcomeHtml;
+        var startBtn = documentViewerInner.querySelector('#start-reading-button');
+        if (startBtn) {
+          startBtn.addEventListener('click', function () {
+            if (playbookDocuments.length) {
+              loadDocument(playbookDocuments[0].id);
+            }
+          });
+        }
+      }
+      document.title = 'Playbook Product Builder — Converteo';
+      setActiveDocumentLink(null);
+      history.pushState(null, '', location.pathname + location.search);
+      announce('Accueil du Playbook');
+    }
+
+    async function loadDocument(documentId, options) {
+      options = options || {};
+      var doc = documentsById.get(documentId);
+
+      if (!doc) {
+        renderErrorState(
+          'Document introuvable',
+          'Aucun contenu ne correspond à l\'identifiant « ' + documentId + ' ».',
+          null
+        );
+        return;
+      }
+
+      if (location.protocol === 'file:') {
+        renderErrorState(
+          'Lecture impossible en local',
+          'Pour consulter le Playbook localement, lancez un serveur HTTP local ou utilisez GitHub Pages.',
+          doc
+        );
+        return;
+      }
+
+      if (!window.marked || !window.DOMPurify) {
+        renderErrorState(
+          'Lecteur indisponible',
+          'Les bibliothèques Marked et/ou DOMPurify n\'ont pas pu être chargées : la conversion du Markdown est impossible pour le moment.',
+          doc
+        );
+        return;
+      }
+
+      var authors;
+      var lastUpdated;
+      var bodyHtml;
+      var cached = documentCache.get(documentId);
+
+      if (cached) {
+        authors = cached.authors;
+        lastUpdated = cached.lastUpdated;
+        bodyHtml = cached.bodyHtml;
+      } else {
+        renderLoadingState(doc);
+
+        var response;
+        try {
+          response = await fetch(doc.path);
+        } catch (networkError) {
+          renderErrorState(
+            'Erreur de chargement',
+            'Une erreur réseau est survenue lors du chargement de « ' + doc.path + ' ».',
+            doc
+          );
+          return;
+        }
+
+        if (!response.ok) {
+          if (response.status === 404) {
+            renderErrorState(
+              'Fichier introuvable',
+              'Le fichier « ' + doc.path + ' » est introuvable (erreur 404).',
+              doc
+            );
+          } else {
+            renderErrorState(
+              'Erreur de chargement',
+              'Le serveur a répondu avec une erreur (' + response.status + ') pour « ' + doc.path + ' ».',
+              doc
+            );
+          }
+          return;
+        }
+
+        var rawMarkdown = await response.text();
+        var parsed = parseFrontMatter(rawMarkdown);
+
+        authors = (parsed.metadata && parsed.metadata.authors && parsed.metadata.authors.length)
+          ? parsed.metadata.authors
+          : doc.authors;
+        lastUpdated = (parsed.metadata && parsed.metadata.lastUpdated)
+          ? parsed.metadata.lastUpdated
+          : doc.updated;
+
+        var rawHtml = marked.parse(resolveRelativeAssetPaths(parsed.content));
+        var safeHtml = DOMPurify.sanitize(rawHtml, MARKDOWN_SANITIZE_CONFIG);
+        bodyHtml = stripDuplicateLeadingHeading(safeHtml, doc);
+
+        documentCache.set(documentId, { authors: authors, lastUpdated: lastUpdated, bodyHtml: bodyHtml });
+      }
+
+      renderDocumentView(doc, authors, lastUpdated, bodyHtml);
+      setActiveDocumentLink(documentId);
+
+      if (!options.fromHistory) {
+        history.pushState({ documentId: documentId }, '', '#doc=' + documentId);
+      }
+
+      if (sidebar && sidebar.classList.contains('is-open')) {
+        closeSidebar(false);
+      }
+    }
+
+    var startReadingButton = document.getElementById('start-reading-button');
+    if (startReadingButton) {
+      startReadingButton.addEventListener('click', function () {
+        if (playbookDocuments.length) {
+          loadDocument(playbookDocuments[0].id);
+        }
+      });
+    }
+
+    window.addEventListener('popstate', function (event) {
+      var id = event.state && event.state.documentId;
+      if (id) {
+        loadDocument(id, { fromHistory: true });
+      } else {
+        showWelcomeState();
+      }
+    });
+
+    var initialHashMatch = location.hash.match(/^#doc=(.+)$/);
+    if (initialHashMatch) {
+      var initialId = decodeURIComponent(initialHashMatch[1]);
+      loadDocument(initialId, { fromHistory: true });
+    }
+  })();
+</script>
+
+</body>
+</html>

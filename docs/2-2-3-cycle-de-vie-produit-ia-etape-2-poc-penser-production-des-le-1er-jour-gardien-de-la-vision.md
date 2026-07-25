@@ -1,13 +1,7 @@
 ---
-title: "2.2.3 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Gardien de la vision"
 authors:
   - "Alexia Maynart"
 last_updated: "2026-03-17"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-01wx8MwXQa"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-01wx8MwXQa::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 2.2.3 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Gardien de la vision

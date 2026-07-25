@@ -1,13 +1,7 @@
 ---
-title: "1.2.3 Compétences transversales du Product Builder"
 authors:
   - "Etienne Fenetrier"
 last_updated: "2026-03-12"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-dIPOzJ__oU"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-dIPOzJ__oU::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 1.2.3 Compétences transversales du Product Builder

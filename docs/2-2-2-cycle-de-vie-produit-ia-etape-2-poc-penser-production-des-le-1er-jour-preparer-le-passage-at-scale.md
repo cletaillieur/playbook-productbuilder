@@ -1,13 +1,7 @@
 ---
-title: "2.2.2 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Préparer le passage at scale"
 authors:
   - "Avenert Cazako"
 last_updated: "2026-03-17"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-DgPKzxLi6Q"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-DgPKzxLi6Q::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 2.2.2 Cycle de vie Produit IA - Étape 2 : POC, penser production dès le 1er jour - Préparer le passage at scale

@@ -1,13 +1,7 @@
 ---
-title: "2.3.4 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Archi technique et modèle de données"
 authors:
   - "Erik Perrier"
 last_updated: "2026-03-17"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-_0emuyJHvl"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-_0emuyJHvl::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 2.3.4 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Archi technique et modèle de données

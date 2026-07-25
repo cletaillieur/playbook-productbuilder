@@ -1,13 +1,7 @@
 ---
-title: "1.2.1 Compétences techniques d'un Product Builder"
 authors:
   - "Avenert Cazako"
 last_updated: "2026-03-24"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-yPFirKpRmP"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-yPFirKpRmP::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 1.2.1 Compétences techniques d'un Product Builder

@@ -37,5 +37,4 @@ Les modifications ne doivent pas être poussées directement sur `main`.
 - `docs/` : contenus du Playbook ;
 - `docs/index.md` : sommaire principal ;
 - `docs/assets/images/` : images et schémas ;
-- `CLAUDE.md` : instructions de travail pour Claude Code ;
 - `README.md` : présentation du projet.

@@ -1,0 +1,47 @@
+# Fichiers temporaires de migration
+migration/
+
+# Configuration locale Claude Code
+.claude/settings.local.json
+
+# Fichiers d'environnement et secrets
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Visual Studio Code — configuration locale
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Fichiers temporaires d'éditeur
+*.swp
+*.swo
+*~
+.tmp/
+tmp/
+temp/
+
+# Dépendances et builds éventuels
+node_modules/
+dist/
+build/
+site/
+.cache/
+
+# Python éventuel
+__pycache__/
+*.py[cod]
+.venv/
+venv/

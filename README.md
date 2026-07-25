@@ -6,8 +6,6 @@ Ce dépôt contient le **Playbook Product Builder** de Converteo, une base de co
 
 Le Playbook a pour rôle de rassembler, structurer et transmettre les connaissances liées au métier de Product Builder au sein de Converteo. Il s'adresse notamment aux Product Builders, Product Managers, designers, développeurs, experts data et IA, consultants et responsables produit qui souhaitent s'appuyer sur un référentiel commun.
 
-Le contenu a été initialement élaboré dans Coda, puis migré vers ce dépôt GitHub. Désormais, **GitHub devient la source de vérité** pour les évolutions futures du Playbook.
-
 Ce contenu est collaboratif et évolutif : il est amené à être enrichi, corrigé et complété au fil du temps par les contributeurs.
 
 ## Consulter le Playbook
@@ -29,14 +27,12 @@ Le sommaire comprend également une section [Contenus à vérifier](docs/index.m
 
 Les contributions au Playbook se font via GitHub :
 
-1. création d'une branche ou d'un fork ;
+1. création d'une branche ;
 2. modification ou ajout d'un fichier Markdown ;
 3. ouverture d'une Pull Request ;
 4. relecture et validation avant fusion.
 
 Les modifications ne doivent pas être poussées directement sur `main`.
-
-Les règles détaillées de contribution seront bientôt documentées.
 
 ## Organisation du dépôt
 
@@ -45,7 +41,3 @@ Les règles détaillées de contribution seront bientôt documentées.
 - `docs/assets/images/` : images et schémas ;
 - `CLAUDE.md` : instructions de travail pour Claude Code ;
 - `README.md` : présentation du projet.
-
-## Statut du projet
-
-Cette version correspond à la migration initiale du Playbook depuis Coda. Elle peut encore faire l'objet de vérifications éditoriales, de corrections de liens et d'améliorations de présentation.

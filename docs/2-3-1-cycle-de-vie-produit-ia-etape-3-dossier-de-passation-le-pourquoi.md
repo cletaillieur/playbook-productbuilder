@@ -1,13 +1,7 @@
 ---
-title: "2.3.1 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Le \"Pourquoi\""
 authors:
   - "Alexia Maynart"
 last_updated: "2026-03-17"
-source_row_uri: "coda://docs/1aAVKYnF9N/tables/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120/rows/i-_3fbaLIcck"
-source_canvas_uri: "canvases/grid-sync-1054-Table-dynamic-9dd960ee3688f9f5a4d38a2afa1f41988605de8e5cddc8199d6fe000a5293120::i-_3fbaLIcck::c-YJDQrE0G_P"
-migration_source: "Coda MCP"
-access_level: "à vérifier"
-status: "migrated-pilot"
 ---
 
 # 2.3.1 Cycle de vie Produit IA - Étape 3 : Dossier de passation - Le "Pourquoi"
@@ -74,5 +68,4 @@ Dans ce processus, attention à ne pas s'attacher à une fonctionnalité seuleme
 
 En outre, refuser de déprioriser, c’est le meilleur moyen de livrer un produit médiocre et en retard. Être un bon Product Builder, c'est savoir dire ***non*** ou ***pas maintenant***. La crédibilité du planning en dépend.
 
-[ÉLÉMENT CODA À VÉRIFIER — callout type="note" non converti nativement en Markdown standard]
-> Lire aussi : [“Quels KPIs prendre en compte dans un projet IA”](https://coda.io/d/_dGKuDyag4nM#Liste-des-contenus_tuxvzd3U/Detail_vuGgzkxE/r26) en annexe.
+> Lire aussi : [Quels KPIs prendre en compte dans un projet IA](annexe-quels-kpis-a-prendre-en-compte-dans-un-projet-ia.md) en annexe.

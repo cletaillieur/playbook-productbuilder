@@ -21,8 +21,6 @@ Le sommaire (`docs/index.md`) est organisé en deux grandes parties :
 - une liste numérotée des contenus principaux (de 1.1.1 à 2.3.5), couvrant le portrait du rôle de Product Builder puis le cycle de vie opérationnel d'un produit IA ;
 - une section [Annexes](docs/index.md#annexes), regroupant les contenus complémentaires sans numéro de section.
 
-Le sommaire comprend également une section [Contenus à vérifier](docs/index.md#contenus-à-vérifier), qui recense les fichiers dont la migration reste incomplète ou dont le niveau d'accès n'est pas encore synchronisé.
-
 ## Contribuer
 
 Les contributions au Playbook se font via GitHub :

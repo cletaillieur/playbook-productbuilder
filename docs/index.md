@@ -34,22 +34,3 @@ Sommaire généré à partir de `migration/manifest.md` (ordre exact de la table
 | [Annexe - Les principes clés d'un prompt efficace](annexe-les-principes-cles-dun-prompt-efficace.md) | Etienne Fenetrier | 12/03/2026 |
 | [Annexe - Le framework ACTIF, une méthodologie de structuration des prompts](annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts.md) | Etienne Fenetrier | 12/03/2026 |
 | [Annexe - Glossaire simplifié](annexe-glossaire-simplifie.md) | Etienne Fenetrier | 12/03/2026 |
-
-## Contenus à vérifier
-
-Fichiers présentant un contenu incomplet (retenu par rapport à la source Coda) ou un point d'accès non encore synchronisé :
-
-**Contenu incomplet — table Coda intégrée référencée mais non développée par l'API (renvoi `## [Table N]` conservé, données non récupérées) :**
-- [2.1 Cycle de vie Produit IA - Le cadrage stratégique](2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact.md) — Table 2 non développée
-- [2.3.2 Cycle de vie Produit IA - Étape 3 - Le "Comment"](2-3-2-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-le-comment.md) — Table 3 non développée
-- [2.3.3 Cycle de vie Produit IA - Étape 3 - Ensemble du savoir de l'agent](2-3-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-ensemble-du-savoir-de-lagent.md) — Table 4 non développée
-- [Annexe - Le framework ACTIF](annexe-le-framework-actif-une-methodologie-de-structuration-des-prompts.md) — Table 5 non développée
-
-**Contenu incomplet — image référencée non téléchargeable (marqueur `[IMAGE À RÉCUPÉRER]` conservé, détail dans `migration/unresolved-images.md`) :**
-- [1.2.3 Compétences transversales du Product Builder](1-2-3-competences-transversales-du-product-builder.md)
-- [1.3 Les (nombreux) défis et enjeux du rôle hybride de Product Builder](1-3-les-nombreux-defis-et-enjeux-du-role-hybride-de-product-builder.md)
-- [2.1 Cycle de vie Produit IA - Le cadrage stratégique](2-1-cycle-de-vie-produit-ia-le-cadrage-strategique-prioriser-pour-maximiser-limpact.md)
-- [2.3 Cycle de vie Produit IA - Étape 3 : Dossier de passation](2-3-cycle-de-vie-produit-ia-etape-3-dossier-de-passation.md)
-- [2.3.5 Cycle de vie Produit IA - Étape 3 - La validation](2-3-5-cycle-de-vie-produit-ia-etape-3-dossier-de-passation-la-validation.md)
-
-**Niveau d'accès :** `migration/access-audit.md` indique que les 25 lignes de la table Coda sont marquées « Public » / « Publié ». Cette valeur n'a toutefois pas encore été reportée dans le frontmatter des 25 fichiers `docs/*.md`, qui affichent tous `access_level: "à vérifier"` — champ resté au statut par défaut de la migration. À synchroniser avant toute publication finale.

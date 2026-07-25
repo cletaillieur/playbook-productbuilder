@@ -2,6 +2,7 @@
 migration/
 CLAUDE.md
 DESIGN_SYSTEM.md
+.claude/
 
 # Configuration locale Claude Code
 .claude/settings.local.json

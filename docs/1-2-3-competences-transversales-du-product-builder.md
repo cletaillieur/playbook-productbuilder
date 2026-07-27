@@ -25,11 +25,7 @@ Plusieurs méthodologies ont fait leurs preuves sur ce terrain, notamment la **V
 Dans le cadre d’une mission, un client a souhaité automatiser grâce à l’IA tout un ensemble de règles métiers, dans le but de valider une information sur une fiche produit. Avant d’ajouter simplement cette feature, il était essentiel de comprendre les étapes du système existant, ainsi que l’ensemble des interactions avec le SI pour mesurer les impacts d’un tel changement.
 
 Cette étape de rétro-engineering a été formatrice, mais elle s’est surtout avérée essentielle pour définir correctement les spécifications de la future solution, qui ne pouvait qu’exister au sein d’un système historique. 
-
-[IMAGE À RÉCUPÉRER — lien vers un blob Coda (`Global-Blobs`) non résolu en image par l'API, probablement un schéma illustrant le système existant]
-[https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-MSiAXxo4SR](https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-MSiAXxo4SR)
-
-​  
+​
 
 
 **La gestion des parties prenantes : savoir communiquer, fédérer, embarquer vers le changement**

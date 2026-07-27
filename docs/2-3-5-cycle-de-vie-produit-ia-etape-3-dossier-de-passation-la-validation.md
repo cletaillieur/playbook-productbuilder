@@ -9,12 +9,6 @@ last_updated: "2026-03-17"
 **En phase d'industrialisation, le Product Builder abandonne le contrôle direct du code et du prompt. Son levier d'influence le plus puissant devient alors le jeu de données de test.** Ce n'est pas un simple fichier, c'est l'incarnation de ses exigences de qualité. C'est le contrat de recette qui servira de juge de paix automatisé pour chaque mise à jour. Si l'agent réussit les tests de ce dataset, la modification est validée. S'il échoue, elle est rejetée.
 
 Ce jeu de données est un livrable vivant, qui doit être construit et enrichi en continu. Il se compose de trois familles de tests complémentaires : **le jeu de données de test exhaustif (Golden Dataset)**, **les cas limites (Edge Cases)** et **les scénarios de Red Teaming identifiés.** 
-
-​
-
-[IMAGE À RÉCUPÉRER — lien vers un blob Coda (`Global-Blobs`) non résolu en image par l'API, probablement un schéma des trois familles de tests (Golden Dataset, Edge Cases, Red Teaming)]
-[https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-CkTn1kyINg](https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-CkTn1kyINg)
-
 ​
 
 **Le Golden Dataset est une collection de 50 à 100 paires "Question Utilisateur / Réponse Idéale Attendue".** Il représente le *happy path* et les cas d'usage les plus critiques pour la valeur du produit. C'est la référence absolue de ce à quoi doit ressembler une performance parfaite.

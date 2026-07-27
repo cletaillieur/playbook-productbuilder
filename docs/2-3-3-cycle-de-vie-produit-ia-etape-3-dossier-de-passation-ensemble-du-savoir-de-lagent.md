@@ -26,8 +26,6 @@ Cela implique donc de lister et prioriser toutes les sources d'information indis
 
 Pour un agent assistant commercial, la cartographie pourrait ressembler à ceci :
 
-[ÉLÉMENT CODA À VÉRIFIER — référence à une table Coda intégrée (« Table 4 »), non développée par l'API : seul le lien a été retourné, pas les données de la table]
-## [Table 4](https://coda.io/d/_dGKuDyag4nM#Table-4_tugrid-l0Gt9TQrf3)
 
 **La garantie de la qualité des données (Data Readiness)**
 

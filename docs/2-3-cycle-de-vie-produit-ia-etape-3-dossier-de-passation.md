@@ -17,8 +17,3 @@ Pour être efficace, le dossier de passation doit répondre à cinq questions fo
 - **Quelle structure technique faut-il ?** Au-delà du simple choix d'outils, il est crucial de documenter une **architecture de l'Agent** qui soit scalable et modulaire, capable d'évoluer sans tout casser à la prochaine itération.
 
 - **Comment valider que c'est prêt ?** Sans un **jeu de données** de test exhaustif (**Golden Dataset**), un agent IA reste une boîte noire sans preuve de performance. C'est le juge de paix pour valider la mise en production.
-
-
-
-[IMAGE À RÉCUPÉRER — lien vers un blob Coda (`Global-Blobs`) non résolu en image par l'API, probablement un schéma synthétisant les 5 questions du dossier de passation]
-[https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-cLIEQVSUh3](https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-cLIEQVSUh3)

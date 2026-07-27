@@ -32,10 +32,6 @@ Pour aider le Product Builder à se positionner, une matrice qui croise deux axe
 
 Le croisement de ces deux axes définit ensuite quatre grands modes de travail pour le Product Builder.
 
-[IMAGE À RÉCUPÉRER — lien vers un blob Coda (`Global-Blobs`) non résolu en image par l'API, probablement le schéma de la matrice d'autonomie à 4 quadrants]
-[https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-QqKrQ-5hfR](https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-QqKrQ-5hfR)
-
-​
 
 **Quadrant 1 - Autonomie (Stack simple / Prototype simple)**
 

@@ -23,6 +23,13 @@
 <!-- Canonical à définir une fois l'URL de publication GitHub Pages connue -->
 <!-- <link rel="canonical" href="https://REMPLACER-PAR-URL-PUBLIQUE/"> -->
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,6 +91,8 @@
     --shadow-card: 0 12px 30px rgba(46, 20, 82, 0.08);
 
     --header-height: 72px;
+
+    --font-primary: "Poppins", Arial, Helvetica, sans-serif;
   }
 
   *, *::before, *::after {
@@ -98,10 +107,17 @@
     margin: 0;
     background: var(--surface-page);
     color: var(--text-primary);
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.65;
     font-weight: 400;
+  }
+
+  body,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--font-primary);
   }
 
   h1, h2, h3 {

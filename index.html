@@ -41,37 +41,42 @@
 </script>
 
 <style>
-  :root {
-    --color-night: #2E1452;
-    --color-cyan: #2BD6D9;
-    --color-cyan-soft: #E2FFFF;
-
-    --color-electric-blue: #3836BF;
-    --color-green: #00C47A;
-    --color-teal: #009699;
-    --color-yellow: #FFC229;
-    --color-red: #FF3125;
-    --color-pearl: #DEDBDE;
-
-    --color-gray-900: #2A2730;
-    --color-gray-700: #767676;
-    --color-gray-500: #C4C4C4;
-    --color-gray-200: #EFEFEF;
-    --color-gray-100: #F9F9F9;
+   :root {
+    --color-black: #000000;
+    --color-violet: #462880;
+    --color-cyan: #5AE6FA;
+    --color-cyan-soft: #E8FBFE;
+    --color-grey-light-blue: #DFE1E6;
+    --color-grey-mid-blue: #BCC1C9;
     --color-white: #FFFFFF;
+
+    /* Alias conservés pour limiter les changements dans le reste du CSS */
+    --color-night: var(--color-violet);
+    --color-electric-blue: var(--color-violet);
+    --color-green: var(--color-cyan);
+    --color-teal: var(--color-violet);
+    --color-yellow: var(--color-cyan);
+    --color-red: var(--color-violet);
+    --color-pearl: var(--color-grey-light-blue);
+
+    --color-gray-900: var(--color-black);
+    --color-gray-700: #5F6470;
+    --color-gray-500: var(--color-grey-mid-blue);
+    --color-gray-200: var(--color-grey-light-blue);
+    --color-gray-100: #F7F8FA;
 
     --surface-page: var(--color-gray-100);
     --surface-card: var(--color-white);
-    --surface-subtle: #F5F4FF;
+    --surface-subtle: #F2F3F6;
 
-    --text-primary: var(--color-gray-900);
-    --text-secondary: var(--color-gray-700);
+    --text-primary: var(--color-black);
+    --text-secondary: #5F6470;
     --text-inverse: var(--color-white);
 
-    --border-subtle: var(--color-gray-200);
-    --border-strong: var(--color-gray-500);
+    --border-subtle: var(--color-grey-light-blue);
+    --border-strong: var(--color-grey-mid-blue);
 
-    --focus-ring: 0 0 0 3px rgba(43, 214, 217, 0.35);
+    --focus-ring: 0 0 0 3px rgba(90, 230, 250, 0.45);
 
     --space-1: 0.25rem;
     --space-2: 0.5rem;
@@ -88,7 +93,7 @@
     --radius-lg: 24px;
     --radius-pill: 999px;
 
-    --shadow-card: 0 12px 30px rgba(46, 20, 82, 0.08);
+    --shadow-card: 0 12px 30px rgba(70, 40, 128, 0.10);
 
     --header-height: 72px;
 
@@ -227,7 +232,7 @@
   }
 
   .button-primary:hover {
-    background: #68E4E6;
+    background: #8CEEF9;
     transform: translateY(-1px);
   }
 
@@ -367,7 +372,7 @@
     border: 0;
     padding: 0;
     margin: 0;
-    background: rgba(46, 20, 82, 0.55);
+    background: rgba(0, 0, 0, 0.58);
     cursor: pointer;
   }
 
@@ -508,8 +513,9 @@
 
   .sidebar-nav a.is-active {
     background: var(--color-cyan-soft);
-    color: var(--color-night);
+    color: var(--color-violet);
     font-weight: 600;
+    box-shadow: inset 3px 0 0 var(--color-cyan);
   }
 
   .sidebar-empty-state {
@@ -554,7 +560,7 @@
     height: 34rem;
     right: -8rem;
     top: -10rem;
-    background: radial-gradient(circle at 30% 30%, rgba(43, 214, 217, 0.32), rgba(43, 214, 217, 0) 70%);
+    background: radial-gradient(circle at 30% 30%, rgba(90, 230, 250, 0.34), rgba(90, 230, 250, 0) 70%);
   }
 
   .hero-graphic .shape-2 {
@@ -562,7 +568,7 @@
     height: 28rem;
     left: -7rem;
     bottom: -9rem;
-    background: radial-gradient(circle at 70% 70%, rgba(56, 54, 191, 0.4), rgba(56, 54, 191, 0) 70%);
+    background: radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 70%);
   }
 
   .hero-graphic .shape-3 {
@@ -572,7 +578,7 @@
     bottom: -4rem;
     border-radius: var(--radius-lg);
     clip-path: polygon(22% 0%, 100% 0%, 78% 100%, 0% 100%);
-    background: linear-gradient(135deg, rgba(43, 214, 217, 0.28), rgba(56, 54, 191, 0.28));
+    background: linear-gradient(135deg, rgba(90, 230, 250, 0.32), rgba(255, 255, 255, 0.14));
   }
 
   .hero-inner {
@@ -586,8 +592,8 @@
     margin-bottom: var(--space-5);
     padding: 0.35rem 0.85rem;
     border-radius: var(--radius-pill);
-    background: rgba(43, 214, 217, 0.15);
-    border: 1px solid rgba(43, 214, 217, 0.4);
+    background: rgba(90, 230, 250, 0.16);
+    border: 1px solid rgba(90, 230, 250, 0.45);
     color: var(--color-cyan);
     font-size: 0.8rem;
     font-weight: 700;
@@ -709,8 +715,12 @@
   }
 
   .document-body th {
-    background: var(--surface-subtle);
-    color: var(--color-night);
+    background: var(--color-violet);
+    color: var(--color-white);
+  }
+
+  .document-body tbody tr:nth-child(even) {
+    background: #F7F8FA;
   }
 
   .document-body blockquote {
@@ -730,6 +740,13 @@
 
   .document-body code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .document-body :not(pre) > code {
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    background: var(--surface-subtle);
+    color: var(--color-violet);
   }
 
   .github-source-link {
@@ -800,7 +817,7 @@
 
   /* Pied de page */
   .site-footer {
-    background: var(--color-night);
+    background: var(--color-black);
     color: rgba(255, 255, 255, 0.85);
     padding-block: var(--space-7);
   }
@@ -943,6 +960,7 @@
     }
   }
 </style>
+
 </head>
 <body>
 

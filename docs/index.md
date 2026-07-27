@@ -1,6 +1,7 @@
 # Sommaire — Playbook Product Builder
-
-Sommaire généré à partir de `migration/manifest.md` (ordre exact de la table Coda « Playbook - Product Builder ») et des fichiers présents dans `docs/`. Les 18 premiers contenus sont numérotés dans leur titre d'origine ; les 7 restants, sans numéro, sont regroupés dans la section « Annexes » en fin de page.
+| Titre | Auteur | Dernière MAJ |
+|---|---|---|
+[Product Builder, catalyseur de la transformation vers l’IA et l’Agentique](product-builder-catalyseur-de-la-transformation-vers-l-ia-et-l-agentique.md) | David Spire | 24/03/2026 |
 
 | Titre | Auteur | Dernière MAJ |
 |---|---|---|

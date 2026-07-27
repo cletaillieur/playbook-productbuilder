@@ -1220,13 +1220,7 @@
 
           <div class="document-welcome">
             <h2 id="document-title">Bienvenue dans le Playbook Product Builder</h2>
-            <p>Choisissez un contenu dans le sommaire à gauche pour commencer votre lecture : compétences du Product Builder, cycle de vie d'un produit IA et annexes pratiques.</p>
-            <p><strong>25 contenus</strong> répartis en trois grandes parties :</p>
-            <ul>
-              <li>Partie 1 — Portrait du rôle de Product Builder <span class="document-welcome-count">(7 contenus)</span></li>
-              <li>Partie 2 — Cycle de vie Produit IA <span class="document-welcome-count">(11 contenus)</span></li>
-              <li>Annexes <span class="document-welcome-count">(7 contenus)</span></li>
-            </ul>
+            <div class="document-body" id="welcome-essay"></div>
             <div class="document-welcome-actions">
               <button type="button" class="button-primary" id="start-reading-button">Commencer la lecture</button>
               <a class="github-source-link" href="https://github.com/Converteo/playbook-productbuilder/tree/main/docs" target="_blank" rel="noopener noreferrer">Voir les sources sur GitHub</a>
@@ -2011,6 +2005,53 @@
       announce('Accueil du Playbook');
     }
 
+    /* Redescend chaque titre Markdown de N niveaux (## -> ###, etc.). */
+    function demoteHeadings(markdown, levels) {
+      return markdown.replace(/^(#{1,6})(\s)/gm, function (match, hashes, space) {
+        return hashes + '#'.repeat(levels) + space;
+      });
+    }
+
+    /*
+     * Charge la page de garde éditoriale (docs/product-builder-catalyseur-...md) et l'insère
+     * dans #welcome-essay, avec le même pipeline de sécurité que loadDocument (front matter
+     * retiré, chemins relatifs corrigés, Marked puis DOMPurify). Le fichier commence par son
+     * propre titre de niveau 1, identique au <h1> du hero : on le retire et on redescend les
+     * autres titres d'un cran pour rester cohérent sous le <h2> « Bienvenue ». Échoue en
+     * silence (file://, réseau, libs absentes) : les boutons de l'accueil restent utilisables
+     * même si l'essai ne se charge pas.
+     */
+    function loadWelcomeEssay() {
+      if (!documentViewerInner || location.protocol === 'file:' || !window.marked || !window.DOMPurify) {
+        return;
+      }
+
+      fetch('docs/product-builder-catalyseur-de-la-transformation-vers-l-ia-et-l-agentique.md')
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('HTTP ' + response.status);
+          }
+          return response.text();
+        })
+        .then(function (rawMarkdown) {
+          var content = parseFrontMatter(rawMarkdown).content;
+          content = content.replace(/^\s*#[^\n]*\n?/, '');
+          content = demoteHeadings(content, 1);
+
+          var rawHtml = marked.parse(resolveRelativeAssetPaths(content));
+          var safeHtml = DOMPurify.sanitize(rawHtml, MARKDOWN_SANITIZE_CONFIG);
+
+          var target = documentViewerInner.querySelector('#welcome-essay');
+          if (target) {
+            target.innerHTML = safeHtml;
+            welcomeHtml = documentViewerInner.innerHTML;
+          }
+        })
+        .catch(function () {
+          /* Échec silencieux : l'accueil reste fonctionnel sans l'essai. */
+        });
+    }
+
     async function loadDocument(documentId, options) {
       options = options || {};
       var doc = documentsById.get(documentId);
@@ -2120,6 +2161,8 @@
         }
       });
     }
+
+    loadWelcomeEssay();
 
     window.addEventListener('popstate', function (event) {
       var id = event.state && event.state.documentId;

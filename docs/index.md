@@ -1,10 +1,6 @@
-# Sommaire — Playbook Product Builder
 | Titre | Auteur | Dernière MAJ |
 |---|---|---|
-[Product Builder, catalyseur de la transformation vers l’IA et l’Agentique](product-builder-catalyseur-de-la-transformation-vers-l-ia-et-l-agentique.md) | David Spire | 24/03/2026 |
-
-| Titre | Auteur | Dernière MAJ |
-|---|---|---|
+|[Product Builder, catalyseur de la transformation vers l’IA et l’Agentique](product-builder-catalyseur-de-la-transformation-vers-l-ia-et-l-agentique.md) | David Spire | 24/03/2026 |
 | [1.1.1 Aux origines du Product Builder](1-1-1-aux-origines-du-product-builder.md) | Duy Tan PHAM VU | 17/03/2026 |
 | [1.1.2 Le Product Building aujourd'hui](1-1-2-le-product-building-aujourdhui.md) | Duy Tan PHAM VU | 24/03/2026 |
 | [1.1.3 Product Building : pour quels contextes organisationnels ?](1-1-3-product-building-pour-quels-contextes-organisationnels.md) | Duy Tan PHAM VU | 17/03/2026 |

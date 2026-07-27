@@ -10,9 +10,6 @@ Pour appliquer ces principes de manière standardisée, le Product Builder s'app
 
 Le framework ACTIF est l’une des méthodes que le Product Builder doit utiliser pour rédiger les spécifications de son Contrat du Prompt.
 
-[ÉLÉMENT CODA À VÉRIFIER — référence à une table Coda intégrée (« Table 5 »), non développée par l'API : seul le lien a été retourné, pas les données de la table]
-## [Table 5](https://coda.io/d/_dGKuDyag4nM#Table-5_tugrid-HyVud4HqAh)
-
 ⇒ Exemple de Contrat du Prompt basé sur ACTIF 
 
 Voici comment un Product Builder spécifierait une tâche d'analyse de sentiment pour l'équipe d'ingénierie.

@@ -20,13 +20,8 @@ La course à l’IA peut entraîner **une focalisation excessive sur l’aspect 
 
 Prenons donc un petit pas de recul pour bien comprendre la distinction entre valeur opérationnelle et valeur capitale, afin de permettre au Builder de se positionner sur les bons projets en fonction des priorités de son entreprise.
 
-[ÉLÉMENT CODA À VÉRIFIER — référence à une table Coda intégrée (« Table 2 »), non développée par l'API : seul le lien a été retourné, pas les données de la table]
-## [Table 2](https://coda.io/d/_dGKuDyag4nM#Table-2_tugrid-JMxCl3oQxO)
-
 En pratique, une fois que le Product Builder a revu son backlog en prenant en compte les points ci-dessus, il ou elle peut maintenant passer à la priorisation grâce à la matrice ci-dessous : 
 
-[IMAGE À RÉCUPÉRER — lien vers un blob Coda (`Global-Blobs`) non résolu en image par l'API, probablement le visuel de la matrice de priorisation]
-[https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-RaogfZuMw6](https://docs.superhuman.com/d/_d1aAVKYnF9N#_tuGlobal-Blobs/_rubl-RaogfZuMw6)
 
 ## **GO / NO-GO AI Canvas**
 

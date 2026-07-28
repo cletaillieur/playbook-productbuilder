@@ -6,8 +6,6 @@ last_updated: "2026-03-12"
 
 # Annexe - Quels KPIs à prendre en compte dans un projet IA ?
 
-[ÉLÉMENT CODA À VÉRIFIER — colonnes sans nom de schéma officiel : `table_columns_read` échoue techniquement sur cette table (imbriquée dans une cellule canvas, erreur serveur « canvas not found »). Les noms de colonnes ci-dessous ont été déduits de la ligne d'en-tête visuelle de la table (texte en gras et surligné), récupérée via `table_rows_read` en contournement. Les couleurs de surlignage des cellules d'origine (bleu, vert, jaune, orange) ne sont pas représentables en Markdown standard et n'ont pas été reportées — seul le contenu textuel est conservé intégralement.]
-
 | Catégorie de KPI | Indicateur Clé de Performance (Métrique) | Objectif & Utilité Stratégique |
 |---|---|---|
 | Qualité Intrinsèque du Modèle | **Précision et Fiabilité (Accuracy and Reliability)**<br>- Ancrage (Groundedness)<br>- Exactitude Factuelle<br>- Taux d'Hallucination | Mesurer la capacité du modèle d'IA à fournir des réponses correctes, basées sur les sources de données fournies, et à ne pas inventer d'informations. C'est la base de la confiance. |

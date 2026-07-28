@@ -6,7 +6,6 @@ last_updated: "2026-03-12"
 
 # Annexe - Quels KPIs à prendre en compte dans un projet IA ?
 
-
 | Catégorie de KPI | Indicateur Clé de Performance (Métrique) | Objectif & Utilité Stratégique |
 |---|---|---|
 | Qualité Intrinsèque du Modèle | **Précision et Fiabilité (Accuracy and Reliability)**<br>- Ancrage (Groundedness)<br>- Exactitude Factuelle<br>- Taux d'Hallucination | Mesurer la capacité du modèle d'IA à fournir des réponses correctes, basées sur les sources de données fournies, et à ne pas inventer d'informations. C'est la base de la confiance. |

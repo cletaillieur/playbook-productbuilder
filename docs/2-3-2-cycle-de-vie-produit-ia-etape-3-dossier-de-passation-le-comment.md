@@ -12,9 +12,6 @@ Le rôle du Product Builder n'est plus de trouver ***le prompt magique***, mais 
 
 Pour rédiger un contrat efficace, le Product Builder doit maîtriser deux concepts fondamentaux qui composent toute instruction donnée à un modèle de langage. Le *System Prompt* et le *User Prompt*.
 
-[ÉLÉMENT CODA À VÉRIFIER — référence à une table Coda intégrée (« Table 3 »), non développée par l'API : seul le lien a été retourné, pas les données de la table]
-## [Table 3](https://coda.io/d/_dGKuDyag4nM#Table-3_tugrid-gPKP8oYUzk)
-
 Le Product Builder est principalement le constructeur de la première version du System Prompt. C'est là qu'il définit la constitution de l'IA. Les ingénieurs, eux, s'assurent que le système traite correctement le User Prompt en respectant cette constitution mais peuvent affiner le System Prompt et le User Prompt dans les phases d’itération.
 
 

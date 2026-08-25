@@ -24,8 +24,6 @@ Durant la phase de prototypage, le Product Builder a souvent bricolé avec quelq
 
 Cela implique donc de lister et prioriser toutes les sources d'information indispensables au bon fonctionnement de l'agent. Cette liste doit être actionnable pour l'équipe technique.
 
-Pour un agent assistant commercial, la cartographie pourrait ressembler à ceci :
-
 
 **La garantie de la qualité des données (Data Readiness)**
 
